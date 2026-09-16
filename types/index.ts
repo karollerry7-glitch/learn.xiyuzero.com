@@ -1,5 +1,27 @@
 export type Level = "Starter" | "A1" | "A2" | "B1" | "B2";
 
+// ============ 5D 单词学习法 ============
+// D1 Meaning 最常用中文含义
+// D2 Sound   西班牙语发音 + 重音
+// D3 Grammar 冠词、阴阳性、词性、必要语法
+// D4 Chunk   高频搭配 / 词块
+// D5 Sentence 真实高频例句
+export interface FiveDItem {
+  spanish: string;
+  chinese: string;
+}
+
+export interface FiveD {
+  meaning: string; // D1：只给最重要的一个意思
+  sound: {
+    syllables: string; // 音节划分，如 "ha-blar"
+    stress: string; // 重音说明，如 "重音在最后一个音节 blar"
+  };
+  grammar: string[]; // D3：逐条语法点，如 ["定冠词 la（阴性）", "复数 las casas"]
+  chunks: FiveDItem[]; // D4：高频搭配/词块（带中文）
+  sentences: FiveDItem[]; // D5：真实高频例句（1-3 个，符合等级）
+}
+
 export type UnitType =
   | "word"
   | "phrase"
@@ -29,6 +51,7 @@ export interface LearningUnit {
   antonyms: string[];
   grammarNote: string;
   commonMistakes: string;
+  fiveD?: FiveD; // 5D 数据（逐步升级中，旧条目可能暂无）
 }
 
 export type Rating = "again" | "hard" | "good" | "easy";

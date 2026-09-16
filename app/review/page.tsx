@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Rating } from "@/types";
-import { rateUnit, recordRecall, useAppState } from "@/lib/store";
+import { rateUnit, recordListening, recordRecall, useAppState } from "@/lib/store";
 import { dueQueue } from "@/lib/selectors";
 import { acceptedForms, checkAnswer } from "@/lib/answer";
+import { getFiveD } from "@/data/fived";
 import AudioButton from "@/components/AudioButton";
 import { useSpeech } from "@/hooks/useSpeech";
 import { dueLabel, initialReviewState } from "@/lib/srs";
@@ -17,13 +18,29 @@ const RATINGS: { key: Rating; label: string }[] = [
   { key: "easy", label: "太简单" },
 ];
 
+// SRS 复习覆盖 5D 维度：含义回忆 / 发音听写 / 词块回忆（轮换）
+type Mode = "meaning" | "sound" | "chunk";
+
+function hash(s: string): number {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+
+const MODE_LABEL: Record<Mode, string> = {
+  meaning: "含义回忆",
+  sound: "发音听写",
+  chunk: "词块回忆",
+};
+
 export default function ReviewPage() {
   const state = useAppState();
   const { speak } = useSpeech();
-  const queue = dueQueue(state);
+  const queue = useMemo(() => dueQueue(state), [state]);
   const [idx, setIdx] = useState(0);
   const [input, setInput] = useState("");
   const [revealed, setRevealed] = useState(false);
+  const [played, setPlayed] = useState(false);
 
   if (queue.length === 0 || idx >= queue.length) {
     return (
@@ -47,22 +64,42 @@ export default function ReviewPage() {
 
   const unit = queue[idx];
   const review = state.reviews[unit.id] ?? initialReviewState();
+  const fiveD = getFiveD(unit);
+
+  // 5D 词条在三个维度间轮换；无 5D 数据固定为含义回忆
+  const mode: Mode = fiveD
+    ? (["meaning", "sound", "chunk"] as Mode[])[(hash(unit.id) + idx) % 3]
+    : "meaning";
+
+  // 当前题目的标准答案与提示
+  const chunkItem =
+    mode === "chunk" && fiveD && fiveD.chunks.length > 0
+      ? fiveD.chunks[hash(unit.id) % fiveD.chunks.length]
+      : null;
+  const expected = chunkItem ? chunkItem.spanish : unit.spanish;
+
+  const playTarget = () => {
+    speak(expected);
+    setPlayed(true);
+  };
 
   const reveal = () => {
     const result = checkAnswer(
       input,
-      unit.spanish,
-      acceptedForms(unit.spanish, unit.article)
+      expected,
+      chunkItem ? [] : acceptedForms(unit.spanish, unit.article)
     );
-    recordRecall(unit.id, result);
+    if (mode === "sound") recordListening(result !== "wrong");
+    else recordRecall(unit.id, result);
     setRevealed(true);
-    speak(unit.spanish);
+    speak(expected);
   };
 
   const rate = (r: Rating) => {
     rateUnit(unit.id, r);
     setInput("");
     setRevealed(false);
+    setPlayed(false);
     setIdx(idx + 1);
   };
 
@@ -76,8 +113,33 @@ export default function ReviewPage() {
       </div>
 
       <div className="bg-white rounded-2xl shadow-sm border border-black/5 p-6 md:p-8">
-        <p className="text-sm text-[#182230]/50">看到这个中文，说出西班牙语：</p>
-        <p className="mt-4 text-2xl font-semibold">{unit.chinese}</p>
+        <div className="flex items-center justify-between">
+          <p className="text-sm text-[#182230]/50">
+            {mode === "meaning" && "看到这个中文，说出西班牙语："}
+            {mode === "sound" && "🎧 听发音，写出你听到的西班牙语："}
+            {mode === "chunk" && "回忆这个词块的西班牙语："}
+          </p>
+          <span className="text-xs px-2 py-0.5 rounded-full bg-[#F4B400]/15 text-[#8a6400]">
+            {MODE_LABEL[mode]}
+          </span>
+        </div>
+
+        {mode === "meaning" && (
+          <p className="mt-4 text-2xl font-semibold">{unit.chinese}</p>
+        )}
+        {mode === "sound" && (
+          <div className="mt-6 flex justify-center">
+            <button
+              onClick={playTarget}
+              className="w-20 h-20 rounded-full bg-[#C62828] text-white text-3xl hover:bg-[#a91f1f] transition"
+            >
+              ▶
+            </button>
+          </div>
+        )}
+        {mode === "chunk" && chunkItem && (
+          <p className="mt-4 text-2xl font-semibold">{chunkItem.chinese}</p>
+        )}
 
         {!revealed ? (
           <div className="mt-6 space-y-3">
@@ -86,25 +148,43 @@ export default function ReviewPage() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && reveal()}
-              placeholder="输入西班牙语…"
+              placeholder={
+                mode === "sound" ? "输入你听到的内容…" : "输入西班牙语…"
+              }
               className="w-full px-4 py-3 rounded-xl border border-black/10 focus:border-[#C62828] focus:outline-none text-lg"
             />
             <button
               onClick={reveal}
-              className="w-full py-3 rounded-xl bg-[#182230] text-white font-medium hover:bg-black transition"
+              disabled={mode === "sound" && !played}
+              className="w-full py-3 rounded-xl bg-[#182230] text-white font-medium hover:bg-black transition disabled:opacity-40"
             >
               显示答案
             </button>
+            {mode === "sound" && !played && (
+              <p className="text-center text-xs text-[#182230]/40">先点击 ▶ 听发音</p>
+            )}
           </div>
         ) : (
           <div className="mt-6 space-y-4">
             <div className="flex items-center justify-center gap-3">
-              <p className="text-2xl font-semibold text-[#C62828]">{unit.spanish}</p>
-              <AudioButton text={unit.spanish} />
+              <p className="text-2xl font-semibold text-[#C62828]">{expected}</p>
+              <AudioButton text={expected} />
             </div>
+            {chunkItem && (
+              <p className="text-center text-[#182230]/60 text-sm">
+                {unit.spanish}（{unit.chinese}）
+              </p>
+            )}
             <p className="text-center text-[#182230]/60 text-sm">
               {unit.example.spanish} — {unit.example.chinese}
             </p>
+            {fiveD && (
+              <div className="rounded-xl bg-[#F7F8FA] p-3.5 space-y-1.5">
+                {fiveD.grammar.slice(0, 2).map((g, i) => (
+                  <p key={i} className="text-xs text-[#182230]/70">· {g}</p>
+                ))}
+              </div>
+            )}
             <div className="grid grid-cols-4 gap-2 pt-2">
               {RATINGS.map((r) => (
                 <button

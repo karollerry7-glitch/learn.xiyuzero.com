@@ -8,17 +8,15 @@ export function getReviewOf(s: AppState, id: string): ReviewState {
   return s.reviews[id] ?? initialReviewState();
 }
 
-// 今日新学习队列：未学习过的单元
+// 今日新学习队列：未学习过的单元（从用户起始等级开始）
+const LEVEL_IDX: Record<string, number> = { Starter: 0, A1: 1, A2: 2, B1: 3, B2: 4 };
+
 export function newQueue(s: AppState): LearningUnit[] {
-  const learned = new Set(
-    Object.values(s.reviews)
-      .filter((r) => r.status !== "new")
-      .map((_, i) => i)
-  );
-  void learned;
+  const minIdx = LEVEL_IDX[s.startLevel] ?? 0;
   return units.filter((u) => {
     const r = s.reviews[u.id];
-    return !r || r.status === "new";
+    if (r && r.status !== "new") return false;
+    return (LEVEL_IDX[u.level] ?? 0) >= minIdx;
   });
 }
 

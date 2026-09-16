@@ -4,6 +4,7 @@ import { useState } from "react";
 import { LearningUnit } from "@/types";
 import AudioButton from "./AudioButton";
 import { toggleFavorite, useAppState } from "@/lib/store";
+import { getFiveD } from "@/data/fived";
 
 // 主学习卡：默认只展示核心信息，「查看更多」展开详情，避免认知负担。
 export default function VocabularyCard({
@@ -66,6 +67,44 @@ export default function VocabularyCard({
 
       {expanded && (
         <div className="mt-4 space-y-3 text-sm text-[#182230]/80 border-t border-black/5 pt-4">
+          {(() => {
+            const fd = getFiveD(unit);
+            if (!fd) return null;
+            return (
+              <div className="rounded-xl bg-[#F7F8FA] p-3.5 space-y-2.5">
+                <p className="font-medium text-[#182230]">5D 学习卡</p>
+                <p>
+                  <span className="text-[#182230]/60">发音：</span>
+                  {fd.sound.syllables}（{fd.sound.stress}）
+                </p>
+                <div>
+                  <span className="text-[#182230]/60">语法：</span>
+                  {fd.grammar.map((g, i) => (
+                    <span key={i} className="block pl-3">· {g}</span>
+                  ))}
+                </div>
+                <div className="space-y-1">
+                  <span className="text-[#182230]/60">词块：</span>
+                  {fd.chunks.map((c, i) => (
+                    <span key={i} className="flex items-center gap-2 pl-3">
+                      <span className="text-[#C62828]">{c.spanish}</span>
+                      <span className="text-[#182230]/60">{c.chinese}</span>
+                      <AudioButton text={c.spanish} size="sm" />
+                    </span>
+                  ))}
+                </div>
+                <div className="space-y-1">
+                  <span className="text-[#182230]/60">例句：</span>
+                  {fd.sentences.map((s, i) => (
+                    <span key={i} className="flex items-center gap-2 pl-3">
+                      <span>{s.spanish} — {s.chinese}</span>
+                      <AudioButton text={s.spanish} size="sm" />
+                    </span>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
           <p>
             <span className="font-medium text-[#182230]">词性：</span>
             {unit.partOfSpeech}

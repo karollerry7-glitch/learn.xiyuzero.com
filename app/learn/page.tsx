@@ -13,7 +13,9 @@ import {
 } from "@/lib/store";
 import { newQueue } from "@/lib/selectors";
 import { acceptedForms, checkAnswer } from "@/lib/answer";
+import { getFiveD } from "@/data/fived";
 import VocabularyCard from "@/components/VocabularyCard";
+import FiveDLearn from "@/components/FiveDLearn";
 import AudioButton from "@/components/AudioButton";
 import { useSpeech } from "@/hooks/useSpeech";
 
@@ -186,13 +188,22 @@ export default function LearnPage() {
 
       {phase === "flash" && (
         <div className="space-y-6">
-          <VocabularyCard unit={unit} />
-          <button
-            onClick={startRecall}
-            className="w-full py-3.5 rounded-xl bg-[#C62828] text-white font-medium hover:bg-[#a91f1f] transition"
-          >
-            我记住了，开始回忆 →
-          </button>
+          {(() => {
+            const fiveD = getFiveD(unit);
+            return fiveD ? (
+              <FiveDLearn key={unit.id} unit={unit} fiveD={fiveD} onReady={startRecall} />
+            ) : (
+              <>
+                <VocabularyCard unit={unit} />
+                <button
+                  onClick={startRecall}
+                  className="w-full py-3.5 rounded-xl bg-[#C62828] text-white font-medium hover:bg-[#a91f1f] transition"
+                >
+                  我记住了，开始回忆 →
+                </button>
+              </>
+            );
+          })()}
         </div>
       )}
 
@@ -243,6 +254,22 @@ export default function LearnPage() {
               <p className="text-center text-[#182230]/60 text-sm">
                 {unit.example.spanish} — {unit.example.chinese}
               </p>
+              {(() => {
+                const fd = getFiveD(unit);
+                if (!fd) return null;
+                return (
+                  <div className="rounded-xl bg-[#F7F8FA] p-3.5 text-left space-y-1.5">
+                    {fd.grammar.slice(0, 2).map((g, i) => (
+                      <p key={i} className="text-xs text-[#182230]/70">· {g}</p>
+                    ))}
+                    {fd.chunks[0] && (
+                      <p className="text-xs text-[#C62828]">
+                        · 常用：{fd.chunks[0].spanish}（{fd.chunks[0].chinese}）
+                      </p>
+                    )}
+                  </div>
+                );
+              })()}
               <div className="grid grid-cols-4 gap-2 pt-2">
                 {RATINGS.map((r) => (
                   <button
