@@ -1,5 +1,6 @@
 // Chinese → Spanish 答案判断
-// 规则：忽略大小写与部分标点；拼写错误不算完全正确；
+// 规则：忽略大小写、重音/变音符号（á→a、é→e、ñ→n、ü→u 等，
+// 方便无西班牙语键盘的用户）与部分标点；拼写错误不算完全正确；
 // 相似度 >= 0.85 判为「接近正确」，否则错误。
 
 export type AnswerResult = "correct" | "close" | "wrong";
@@ -7,6 +8,8 @@ export type AnswerResult = "correct" | "close" | "wrong";
 export function normalize(s: string): string {
   return s
     .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/[¡!¿?.,;:"'()]/g, "")
     .replace(/\s+/g, " ")
     .trim();
