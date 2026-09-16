@@ -1,0 +1,16 @@
+{
+  "name": "西语Zero Learn",
+  "short_name": "西语Zero",
+  "description": "面向中文母语者的西班牙语0-B2词汇、听力、发音与主动表达学习系统。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F8FA",
+  "theme_color": "#C62828",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
