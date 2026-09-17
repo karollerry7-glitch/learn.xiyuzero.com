@@ -158,7 +158,7 @@ import { coreUnits } from "./units-core";
 
 const extra: LearningUnit[] = [
 `;
-const body = entries.map((e) => JSON.stringify(e)).join(",\n");
+const body = entries.map((e) => JSON.stringify(e) + " as LearningUnit").join(",\n");
 const tail = `,
 ];
 
