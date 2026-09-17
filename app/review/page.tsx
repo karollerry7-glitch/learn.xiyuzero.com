@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { Rating } from "@/types";
 import { rateUnit, recordListening, recordRecall, useAppState } from "@/lib/store";
@@ -41,6 +41,11 @@ export default function ReviewPage() {
   const [input, setInput] = useState("");
   const [revealed, setRevealed] = useState(false);
   const [played, setPlayed] = useState(false);
+  const [lastResult, setLastResult] = useState<
+    null | "correct" | "close" | "wrong"
+  >(null);
+  // 防连击：答案刚显示的瞬间，同一次 Enter 的后续事件不应触发默认评分
+  const revealedAt = useRef(0);
 
   if (queue.length === 0 || idx >= queue.length) {
     return (
@@ -91,15 +96,19 @@ export default function ReviewPage() {
     );
     if (mode === "sound") recordListening(result !== "wrong");
     else recordRecall(unit.id, result);
+    setLastResult(result);
+    revealedAt.current = Date.now();
     setRevealed(true);
     speak(expected);
   };
 
   const rate = (r: Rating) => {
+    if (Date.now() - revealedAt.current < 400) return;
     rateUnit(unit.id, r);
     setInput("");
     setRevealed(false);
     setPlayed(false);
+    setLastResult(null);
     setIdx(idx + 1);
   };
 
@@ -189,13 +198,19 @@ export default function ReviewPage() {
               {RATINGS.map((r) => (
                 <button
                   key={r.key}
+                  autoFocus={
+                    r.key === (lastResult === "wrong" ? "again" : "good")
+                  }
                   onClick={() => rate(r.key)}
-                  className="py-2.5 rounded-xl border border-black/10 text-sm hover:border-[#C62828] hover:text-[#C62828] transition"
+                  className="py-2.5 rounded-xl border border-black/10 text-sm hover:border-[#C62828] hover:text-[#C62828] transition focus:border-[#C62828] focus:text-[#C62828] focus:outline-none focus:ring-2 focus:ring-[#C62828]/30"
                 >
                   {r.label}
                 </button>
               ))}
             </div>
+            <p className="text-center text-xs text-[#182230]/40">
+              按 Enter 继续（{lastResult === "wrong" ? "再来一次" : "掌握"}）
+            </p>
           </div>
         )}
       </div>

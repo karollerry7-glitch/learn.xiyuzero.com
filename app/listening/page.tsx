@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { units } from "@/data/units";
 import { recordListening, useAppState } from "@/lib/store";
@@ -26,6 +26,8 @@ export default function ListeningPage() {
   const [input, setInput] = useState("");
   const [result, setResult] = useState<null | boolean>(null);
   const [done, setDone] = useState(false);
+  // 防连击：判定刚出现的瞬间，同一次 Enter 的后续事件不应触发"下一个"
+  const judgedAt = useRef(0);
 
   const unit = pool[idx];
 
@@ -50,10 +52,12 @@ export default function ListeningPage() {
 
   const judge = (ok: boolean) => {
     setResult(ok);
+    judgedAt.current = Date.now();
     recordListening(ok);
   };
 
   const next = () => {
+    if (Date.now() - judgedAt.current < 400) return;
     setResult(null);
     setInput("");
     if (idx + 1 < pool.length) {
@@ -166,10 +170,11 @@ export default function ListeningPage() {
               {unit.example.spanish} — {unit.example.chinese}
             </p>
             <button
+              autoFocus
               onClick={next}
-              className="w-full py-3 rounded-xl bg-[#C62828] text-white font-medium hover:bg-[#a91f1f] transition"
+              className="w-full py-3 rounded-xl bg-[#C62828] text-white font-medium hover:bg-[#a91f1f] transition focus:outline-none focus:ring-2 focus:ring-[#C62828]/30"
             >
-              下一个 →
+              下一个 →（Enter）
             </button>
           </div>
         )}
