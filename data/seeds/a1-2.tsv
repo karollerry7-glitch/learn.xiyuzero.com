@@ -1,0 +1,123 @@
+# A1 种子 2：数字 / 星期 / 月份 / 家庭 / 身体 / 食物饮品 / 餐具
+cero|零|num|数字|Mi número termina en cero.|我的号码以零结尾。
+uno|一|num|数字|Solo me queda uno.|我只剩一个了。
+dos|二|num|数字|Tengo dos hermanos.|我有两个兄弟姐妹。
+tres|三|num|数字|Son las tres.|现在三点。
+cuatro|四|num|数字|La clase empieza a las cuatro.|课四点开始。
+cinco|五|num|数字|Trabajo cinco días a la semana.|我一周工作五天。
+seis|六|num|数字|Me levanto a las seis.|我六点起床。
+siete|七|num|数字|La película empieza a las siete.|电影七点开始。
+ocho|八|num|数字|El autobús pasa a las ocho.|公交八点经过。
+nueve|九|num|数字|Son las nueve de la mañana.|现在是早上九点。
+diez|十|num|数字|El billete cuesta diez euros.|车票十欧元。
+once|十一|num|数字|Ella cumple once años.|她满十一岁。
+doce|十二|num|数字|El año tiene doce meses.|一年有十二个月。
+trece|十三|num|数字|Es la una y trece.|现在一点十三分。
+catorce|十四|num|数字|Vivo en el piso catorce.|我住在十四楼。
+quince|十五|num|数字|Mi prima cumple quince años.|我表妹满十五岁。
+veinte|二十|num|数字|Tengo veinte euros en efectivo.|我有二十欧元现金。
+treinta|三十|num|数字|Abril tiene treinta días.|四月有三十天。
+cuarenta|四十|num|数字|El taxi cuesta cuarenta pesos.|出租车四十比索。
+cincuenta|五十|num|数字|La habitación cuesta cincuenta dólares.|房间五十美元。
+sesenta|六十|num|数字|Mi abuela tiene sesenta años.|我奶奶六十岁了。
+setenta|七十|num|数字|Mi abuelo tiene setenta años.|我爷爷七十岁了。
+ochenta|八十|num|数字|Camino ochenta minutos al día.|我每天走八十分钟。
+noventa|九十|num|数字|Noventa días son tres meses.|九十天是三个月。
+cien|一百|num|数字|Tengo cien pesos.|我有一百比索。
+mil|一千|num|数字|El vuelo cuesta mil yuanes.|这趟航班一千元。
+el lunes|星期一|n|时间|El lunes tengo clase de español.|周一我有西语课。
+el martes|星期二|n|时间|El martes voy al gimnasio.|周二我去健身房。
+el miércoles|星期三|n|时间|El miércoles hay mercado.|周三有集市。
+el jueves|星期四|n|时间|El jueves quedo con Ana.|周四我和安娜约了见面。
+el viernes|星期五|n|时间|El viernes salgo con amigos.|周五我和朋友出去。
+el sábado|星期六|n|时间|El sábado no trabajo.|周六我不上班。
+el domingo|星期日|n|时间|El domingo descanso en casa.|周日我在家休息。
+el fin de semana|周末|n|时间|¿Qué haces el fin de semana?|你周末做什么？
+enero|一月|nm|时间|En enero hace frío.|一月很冷。
+febrero|二月|nm|时间|Febrero es el mes del amor.|二月是爱情的月份。
+marzo|三月|nm|时间|En marzo empieza la primavera.|三月春天开始。
+abril|四月|nm|时间|En abril llueve mucho.|四月经常下雨。
+mayo|五月|nm|时间|Mayo es mi mes favorito.|五月是我最喜欢的月份。
+junio|六月|nm|时间|En junio termino el curso.|六月我结束课程。
+julio|七月|nm|时间|En julio voy a la playa.|七月我去海滩。
+agosto|八月|nm|时间|Agosto es muy caluroso.|八月很热。
+septiembre|九月|nm|时间|En septiembre empiezan las clases.|九月开学。
+octubre|十月|nm|时间|En octubre hace fresco.|十月天气凉爽。
+noviembre|十一月|nm|时间|Noviembre ya es otoño.|十一月已经是秋天了。
+diciembre|十二月|nm|时间|En diciembre celebramos la Navidad.|十二月我们庆祝圣诞节。
+la madre|母亲|n|家庭|Mi madre cocina muy bien.|我妈妈做饭很好吃。
+el padre|父亲|n|家庭|Mi padre trabaja en una oficina.|我爸爸在办公室工作。
+el hermano|哥哥；弟弟|n|家庭|Mi hermano estudia en la universidad.|我哥哥在上大学。
+la hermana|姐姐；妹妹|n|家庭|Mi hermana tiene diez años.|我妹妹十岁。
+el hijo|儿子|n|家庭|Su hijo tiene dos años.|她儿子两岁。
+la hija|女儿|n|家庭|Su hija va a la escuela.|她女儿在上学。
+el esposo|丈夫|n|家庭|Mi esposo es médico.|我丈夫是医生。
+la esposa|妻子|n|家庭|Su esposa es profesora.|他妻子是老师。
+el abuelo|爷爷；外公|n|家庭|Mi abuelo vive con nosotros.|我爷爷和我们住在一起。
+la abuela|奶奶；外婆|n|家庭|La abuela hace pasteles.|奶奶做蛋糕。
+el tío|叔叔；舅舅|n|家庭|Mi tío vive en Madrid.|我叔叔住在马德里。
+la tía|阿姨；姑姑|n|家庭|Mi tía viaja mucho.|我姑姑经常旅行。
+el primo|堂/表兄弟|n|家庭|Mi primo juega al fútbol.|我表哥踢足球。
+la prima|堂/表姐妹|n|家庭|Mi prima cumple quince años.|我表妹满十五岁。
+el hombre|男人|n|人物|Ese hombre es mi jefe.|那个男人是我的老板。
+la mujer|女人；妻子|n|人物|Esa mujer es muy amable.|那个女人很友善。
+el niño|男孩；儿童|n|人物|El niño juega en el parque.|男孩在公园玩。
+la niña|女孩|n|人物|La niña come helado.|女孩在吃冰淇淋。
+el chico|男孩；小伙子|n|人物|El chico de la tienda es simpático.|店里的男孩很热情。
+la chica|女孩；姑娘|n|人物|La chica nueva es de México.|新来的女孩来自墨西哥。
+el bebé|婴儿|n|人物|El bebé duerme.|婴儿在睡觉。
+la persona|人|n|人物|Es una persona muy buena.|她是个很好的人。
+el señor|先生|n|称呼|El señor García es mi profesor.|加西亚先生是我的老师。
+la señora|女士；太太|n|称呼|La señora López vive aquí.|洛佩斯太太住在这里。
+la cabeza|头；脑袋|n|身体|Me duele la cabeza.|我头疼。
+el ojo|眼睛|n|身体|Tiene los ojos azules.|她眼睛是蓝色的。
+la mano|手|n|身体|Lávese las manos, por favor.|请洗手。
+el pie|脚|n|身体|Me duelen los pies de caminar.|走路走得我脚疼。
+la boca|嘴|n|身体|Abre la boca.|张开嘴。
+el pelo|头发|n|身体|Tiene el pelo largo.|她留着长发。
+el brazo|手臂|n|身体|Llevo el libro en el brazo.|我手臂上夹着书。
+la pierna|腿|n|身体|Después de correr me duelen las piernas.|跑完步我腿疼。
+el corazón|心脏；心|n|身体|Mi corazón late muy rápido.|我的心脏跳得很快。
+el estómago|胃；肚子|n|身体|Me duele el estómago.|我胃疼。
+el médico|医生|n|健康|Necesito ir al médico.|我需要去看医生。
+la medicina|药|n|健康|Toma la medicina después de comer.|饭后吃药。
+el hospital|医院|n|健康|El hospital está cerca de aquí.|医院就在附近。
+la farmacia|药店|n|健康|Compro la medicina en la farmacia.|我在药店买药。
+el pan|面包|n|食物|Como pan con mantequilla.|我吃黄油面包。
+la leche|牛奶|n|食物|Bebo leche todos los días.|我每天喝牛奶。
+el té|茶|n|食物|Un té verde, por favor.|请来一杯绿茶。
+el vino|葡萄酒|n|食物|Una copa de vino tinto.|一杯红葡萄酒。
+la cerveza|啤酒|n|食物|Dos cervezas frías, por favor.|请来两杯冰啤酒。
+el zumo|果汁|n|食物|Un zumo de naranja natural.|一杯鲜榨橙汁。
+el huevo|鸡蛋|n|食物|Como dos huevos en el desayuno.|我早餐吃两个鸡蛋。
+la carne|肉|n|食物|No como carne.|我不吃肉。
+el pescado|鱼（食用）|n|食物|El pescado está muy fresco.|这鱼很新鲜。
+el pollo|鸡肉|n|食物|Prefiero pollo a carne.|比起红肉我更喜欢吃鸡肉。
+el arroz|米饭|n|食物|El arroz con pollo está rico.|鸡肉饭很好吃。
+la sopa|汤|n|食物|La sopa de verduras es sana.|蔬菜汤很健康。
+la ensalada|沙拉|n|食物|Una ensalada grande, por favor.|请来一份大沙拉。
+la fruta|水果|n|食物|Como fruta todos los días.|我每天吃水果。
+la manzana|苹果|n|食物|Quiero una manzana verde.|我想要一个青苹果。
+el plátano|香蕉|n|食物|El plátano da mucha energía.|香蕉提供很多能量。
+la naranja|橙子|n|食物|Un zumo de naranja, por favor.|请来一杯橙汁。
+el tomate|番茄|n|食物|Compro tomates en el mercado.|我在市场买番茄。
+la patata|土豆|n|食物|Me gustan las patatas fritas.|我喜欢薯条。
+el queso|奶酪|n|食物|El queso español es famoso.|西班牙奶酪很有名。
+el azúcar|糖|n|食物|Un café con azúcar, por favor.|请来一杯加糖的咖啡。
+la sal|盐|n|食物|La comida necesita un poco de sal.|菜里需要一点盐。
+el desayuno|早餐|n|食物|El desayuno está listo.|早餐准备好了。
+el almuerzo|午餐|n|食物|¿Dónde comemos el almuerzo?|我们在哪吃午饭？
+la cena|晚餐|n|食物|La cena es a las ocho.|晚饭八点吃。
+el postre|甜点|n|食物|¿Qué hay de postre?|甜点有什么？
+el helado|冰淇淋|n|食物|Un helado de chocolate, por favor.|请来一个巧克力冰淇淋。
+el vaso|杯子（水杯）|n|餐具|Un vaso de agua, por favor.|请给我一杯水。
+la taza|杯子（带把）|n|餐具|Una taza de café con leche.|一杯拿铁。
+el plato|盘子；菜|n|餐具|El plato del día es paella.|今日套餐是海鲜饭。
+la cuchara|勺子|n|餐具|Necesito una cuchara para la sopa.|我需要一把勺子喝汤。
+el cuchillo|刀|n|餐具|Este cuchillo no corta.|这把刀不锋利。
+el tenedor|叉子|n|餐具|Falta un tenedor.|少一把叉子。
+la botella|瓶子|n|餐具|Una botella de agua sin gas.|一瓶不带气的水。
+el menú|菜单；套餐|n|餐厅|¿Me trae el menú, por favor?|请给我菜单好吗？
+la propina|小费|n|餐厅|Dejo propina al camarero.|我给服务员留了小费。
+el camarero|服务员|n|餐厅|El camarero es muy atento.|服务员很周到。
+la comida rápida|快餐|n|食物|No como comida rápida.|我不吃快餐。

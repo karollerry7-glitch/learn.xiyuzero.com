@@ -15,11 +15,19 @@ export default function LibraryPage() {
   const [level, setLevel] = useState<(typeof LEVELS)[number]>("全部");
   const [topic, setTopic] = useState("全部");
   const [openId, setOpenId] = useState<string | null>(null);
+  const [visible, setVisible] = useState(80);
 
-  const topics = useMemo(
-    () => ["全部", ...Array.from(new Set(units.map((u) => u.topic)))],
-    []
-  );
+  const topics = useMemo(() => {
+    const count = new Map<string, number>();
+    for (const u of units) count.set(u.topic, (count.get(u.topic) ?? 0) + 1);
+    return [
+      "全部",
+      ...[...count.entries()]
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 40)
+        .map(([t]) => t),
+    ];
+  }, []);
 
   const results = useMemo(() => {
     const kw = q.trim().toLowerCase();
@@ -80,10 +88,13 @@ export default function LibraryPage() {
         ))}
       </div>
 
-      <p className="text-sm text-[#182230]/50">共 {results.length} 个 Learning Units</p>
+      <p className="text-sm text-[#182230]/50">
+        共 {results.length} 个 Learning Units
+        {results.length > visible && `（显示前 ${visible} 个）`}
+      </p>
 
       <div className="space-y-2">
-        {results.map((u) => {
+        {results.slice(0, visible).map((u) => {
           const status = state.reviews[u.id]?.status ?? "new";
           const open = openId === u.id;
           return (
@@ -119,6 +130,17 @@ export default function LibraryPage() {
           );
         })}
       </div>
+
+      {results.length > visible && (
+        <div className="text-center">
+          <button
+            onClick={() => setVisible((v) => v + 200)}
+            className="px-6 py-2.5 rounded-xl bg-white border border-black/10 text-sm font-medium hover:border-[#C62828] hover:text-[#C62828] transition"
+          >
+            加载更多（还剩 {results.length - visible} 个）
+          </button>
+        </div>
+      )}
     </div>
   );
 }
