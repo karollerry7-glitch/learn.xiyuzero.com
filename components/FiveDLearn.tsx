@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FiveD, LearningUnit } from "@/types";
 import AudioButton from "./AudioButton";
 import { useSpeech } from "@/hooks/useSpeech";
@@ -29,6 +29,15 @@ export default function FiveDLearn({
 }) {
   const [step, setStep] = useState(0);
   const { speak } = useSpeech();
+  // 防连击：同一次 Enter 的后续事件不应连续跳步
+  const advancedAt = useRef(0);
+
+  const goNext = () => {
+    if (Date.now() - advancedAt.current < 400) return;
+    advancedAt.current = Date.now();
+    if (last) onReady();
+    else setStep(step + 1);
+  };
 
   // 进入卡片自动播放发音
   useEffect(() => {
@@ -173,10 +182,12 @@ export default function FiveDLearn({
           </button>
         )}
         <button
-          onClick={() => (last ? onReady() : setStep(step + 1))}
-          className="flex-1 py-3.5 rounded-xl bg-[#C62828] text-white font-medium hover:bg-[#a91f1f] transition"
+          key={step}
+          autoFocus
+          onClick={goNext}
+          className="flex-1 py-3.5 rounded-xl bg-[#C62828] text-white font-medium hover:bg-[#a91f1f] transition focus:outline-none focus:ring-2 focus:ring-[#C62828]/30"
         >
-          {last ? "我学会了，开始主动回忆 →" : `下一步：${STEPS[step + 1].label} →`}
+          {last ? "我学会了，开始主动回忆 →" : `下一步：${STEPS[step + 1].label} →（Enter）`}
         </button>
       </div>
     </div>

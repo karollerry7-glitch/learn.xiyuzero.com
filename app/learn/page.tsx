@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { LearningUnit, Rating } from "@/types";
 import {
@@ -63,6 +63,11 @@ export default function LearnPage() {
   const [clozeInput, setClozeInput] = useState("");
   const [clozeResult, setClozeResult] = useState<null | boolean>(null);
   const [outputText, setOutputText] = useState("");
+  // 防连击：反馈刚出现的瞬间，同一次 Enter 的后续事件不应触发默认按钮
+  const recallFbAt = useRef(0);
+  const lisFbAt = useRef(0);
+  const clozeFbAt = useRef(0);
+  const GUARD_MS = 400;
 
   const listeningUnits = useMemo(() => queue.slice(0, 10), [queue]);
   const clozeUnits = useMemo(
@@ -109,11 +114,13 @@ export default function LearnPage() {
       acceptedForms(unit.spanish, unit.article)
     );
     setFeedback(result);
+    recallFbAt.current = Date.now();
     recordRecall(unit.id, result);
     speak(unit.spanish);
   };
 
   const submitRating = (r: Rating) => {
+    if (Date.now() - recallFbAt.current < GUARD_MS) return;
     rateUnit(unit.id, r);
     if (idx + 1 < queue.length) {
       setIdx(idx + 1);
@@ -131,10 +138,12 @@ export default function LearnPage() {
       checkAnswer(lisInput, u.spanish, acceptedForms(u.spanish, u.article)) !==
       "wrong";
     setLisResult(ok);
+    lisFbAt.current = Date.now();
     recordListening(ok);
   };
 
   const nextListening = () => {
+    if (Date.now() - lisFbAt.current < GUARD_MS) return;
     setLisInput("");
     setLisResult(null);
     if (lisIdx + 1 < listeningUnits.length) {
@@ -151,9 +160,11 @@ export default function LearnPage() {
     const c = clozeUnits[clozeIdx].cloze;
     const ok = checkAnswer(clozeInput, c.answer) !== "wrong";
     setClozeResult(ok);
+    clozeFbAt.current = Date.now();
   };
 
   const nextCloze = () => {
+    if (Date.now() - clozeFbAt.current < GUARD_MS) return;
     setClozeInput("");
     setClozeResult(null);
     if (clozeIdx + 1 < clozeUnits.length) setClozeIdx(clozeIdx + 1);
@@ -196,10 +207,11 @@ export default function LearnPage() {
               <>
                 <VocabularyCard unit={unit} />
                 <button
+                  autoFocus
                   onClick={startRecall}
-                  className="w-full py-3.5 rounded-xl bg-[#C62828] text-white font-medium hover:bg-[#a91f1f] transition"
+                  className="w-full py-3.5 rounded-xl bg-[#C62828] text-white font-medium hover:bg-[#a91f1f] transition focus:outline-none focus:ring-2 focus:ring-[#C62828]/30"
                 >
-                  我记住了，开始回忆 →
+                  我记住了，开始回忆 →（Enter）
                 </button>
               </>
             );
@@ -274,14 +286,20 @@ export default function LearnPage() {
                 {RATINGS.map((r) => (
                   <button
                     key={r.key}
+                    autoFocus={
+                      r.key === (feedback === "wrong" ? "again" : "good")
+                    }
                     onClick={() => submitRating(r.key)}
-                    className="py-2.5 rounded-xl border border-black/10 text-sm hover:border-[#C62828] hover:text-[#C62828] transition"
+                    className="py-2.5 rounded-xl border border-black/10 text-sm hover:border-[#C62828] hover:text-[#C62828] transition focus:border-[#C62828] focus:text-[#C62828] focus:outline-none focus:ring-2 focus:ring-[#C62828]/30"
                   >
                     {r.label}
                     <span className="block text-xs text-[#182230]/40">{r.hint}</span>
                   </button>
                 ))}
               </div>
+              <p className="text-center text-xs text-[#182230]/40">
+                按 Enter 继续（{feedback === "wrong" ? "再来一次" : "掌握"}）
+              </p>
             </div>
           )}
         </div>
@@ -325,10 +343,11 @@ export default function LearnPage() {
                 {listeningUnits[lisIdx].example.spanish} — {listeningUnits[lisIdx].example.chinese}
               </p>
               <button
+                autoFocus
                 onClick={nextListening}
-                className="w-full py-3 rounded-xl bg-[#C62828] text-white font-medium hover:bg-[#a91f1f] transition"
+                className="w-full py-3 rounded-xl bg-[#C62828] text-white font-medium hover:bg-[#a91f1f] transition focus:outline-none focus:ring-2 focus:ring-[#C62828]/30"
               >
-                下一个 →
+                下一个 →（Enter）
               </button>
             </div>
           )}
@@ -370,10 +389,11 @@ export default function LearnPage() {
                 <AudioButton text={clozeUnits[clozeIdx].unit.example.spanish} size="sm" />
               </div>
               <button
+                autoFocus
                 onClick={nextCloze}
-                className="w-full py-3 rounded-xl bg-[#C62828] text-white font-medium hover:bg-[#a91f1f] transition"
+                className="w-full py-3 rounded-xl bg-[#C62828] text-white font-medium hover:bg-[#a91f1f] transition focus:outline-none focus:ring-2 focus:ring-[#C62828]/30"
               >
-                下一个 →
+                下一个 →（Enter）
               </button>
             </div>
           )}
