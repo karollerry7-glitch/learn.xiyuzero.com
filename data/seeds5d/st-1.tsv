@@ -1,0 +1,104 @@
+﻿# Starter 5D 种子：D4 词块（es=>zh，; 分隔），可选 g:/s2:/m: 覆盖
+st-001|¡hola! ¿qué tal?=>你好！怎么样？;decir hola=>打招呼
+st-002|decir adiós=>道别;adiós para siempre=>永别
+st-003|muchas gracias=>非常感谢;gracias por todo=>感谢这一切|g:回答用 de nada（不客气）
+st-004|un café, por favor=>请给我一杯咖啡;más despacio, por favor=>请说慢一点|g:固定用语，加在请求后面软化语气
+st-005|sí, claro=>是的，当然;decir sí=>表示同意
+st-006|no, gracias=>不用了，谢谢;decir no=>拒绝
+st-007|dar los buenos días=>道早安;buenos días, señora=>早上好，女士
+st-008|dar las buenas tardes=>道午后安;buenas tardes a todos=>大家下午好
+st-009|dar las buenas noches=>道晚安;buenas noches, que duermas bien=>晚安，睡个好觉|g:晚间见面或睡前道别用
+st-010|¿qué tal estás?=>你最近怎么样？;¿qué tal el trabajo?=>工作怎么样？
+st-011|mucho gusto en conocerte=>认识你很高兴;¡mucho gusto!=>幸会！|g:初次见面用语，回应可用 igualmente（我也是）
+st-012|hasta mañana=>明天见;hasta pronto=>回头见
+st-013|lo siento mucho=>非常抱歉;lo siento, llego tarde=>抱歉，我迟到了|g:道歉用语，比 perdón 更真诚
+st-014|¡de nada!=>不客气！;de nada, es un placer=>不客气，我的荣幸|g:固定用语，用来回答 gracias
+st-015|me llamo Ana=>我叫安娜;¿y tú cómo te llamas?=>那你叫什么名字？
+st-016|ser de China=>来自中国;ser estudiante=>是学生;ser las dos=>现在是两点
+st-017|estar en casa=>在家;estar cansado=>累了;estar de buen humor=>心情好
+st-019|hacer deporte=>做运动;hacer la compra=>采购;hacer una pregunta=>提问
+st-020|ir a casa=>回家;ir de viaje=>去旅行;ir en autobús=>坐公交去
+st-021|venir de China=>来自中国;venir a la fiesta=>来参加聚会;venir conmigo=>跟我来
+st-022|querer hacer algo=>想做某事;te quiero=>我爱你;querer mucho a alguien=>很爱某人
+st-023|¿puedo entrar?=>我可以进来吗？;poder hacer algo=>能做某事;¿puedes ayudarme?=>你能帮我吗？
+st-024|necesitar ayuda=>需要帮助;necesitar hacer algo=>需要做某事
+st-025|vivir en Madrid=>住在马德里;vivir solo=>独居;vivir con la familia=>和家人一起住
+st-026|trabajar en una empresa=>在公司工作;trabajar de camarero=>做服务生
+st-027|estudiar español=>学西班牙语;estudiar en la universidad=>在大学读书
+st-029|comer bien=>吃得好;comer fuera=>在外面吃;comer fruta=>吃水果
+st-030|beber agua=>喝水;beber café=>喝咖啡
+st-031|me gusta mucho=>我非常喜欢;me gustan los libros=>我喜欢这些书;¿te gusta?=>你喜欢吗？|m:喜欢
+st-032|saber hablar español=>会说西语;no sé=>我不知道;saber la verdad=>知道真相
+st-033|conocer a alguien=>认识某人;conocer bien la ciudad=>很熟悉这座城市
+st-034|dar un regalo=>送礼物;dar las gracias=>道谢;dar un paseo=>散步
+st-035|ver la tele=>看电视;ver una película=>看电影;a ver=>让我看看
+st-036|escuchar música=>听音乐;escuchar la radio=>听广播
+st-037|comprar comida=>买食物;ir de compras=>去购物;comprar online=>网购
+st-038|vender productos=>卖产品;vender a buen precio=>卖个好价
+st-039|pagar en efectivo=>付现金;pagar con tarjeta=>刷卡付款;pagar la cuenta=>买单
+st-041|dormir bien=>睡得好;dormir ocho horas=>睡八小时;dormir la siesta=>午睡
+st-042|levantarse temprano=>早起;levantarse de la cama=>起床下地
+st-043|llamar a alguien=>给某人打电话;llamar por teléfono=>打电话;llamar a la puerta=>敲门
+st-044|escribir un correo=>写邮件;escribir un mensaje=>写短信
+st-045|leer un libro=>读书;leer las noticias=>看新闻
+st-046|entender bien=>理解到位;no entiendo=>我不明白;entender el chiste=>听懂笑话
+st-047|preguntar por alguien=>打听某人;hacer una pregunta=>提一个问题
+st-048|responder a la pregunta=>回答问题;responder un correo=>回邮件
+st-050|ir al trabajo=>去上班;buscar trabajo=>找工作;terminar el trabajo=>完成工作
+st-051|tener tiempo=>有时间;hacer buen tiempo=>天气好;¿qué tiempo hace?=>天气怎么样？
+st-052|hacer la comida=>做饭;la comida rápida=>快餐
+st-053|un buen amigo=>好朋友;salir con amigos=>和朋友出去玩
+st-054|mi mejor amiga=>我最好的朋友;una amiga de la universidad=>大学时的朋友
+st-055|mi familia=>我的家人;en familia=>全家一起;una familia grande=>大家庭
+st-056|un vaso de agua=>一杯水;agua fría=>凉水;agua mineral=>矿泉水
+st-057|tomar un café=>喝杯咖啡;un café con leche=>牛奶咖啡;café solo=>纯咖啡
+st-058|ganar dinero=>挣钱;gastar dinero=>花钱;ahorrar dinero=>存钱
+st-059|todos los días=>每天;el día libre=>休息日;buenos días=>早上好
+st-060|por la noche=>在晚上;esta noche=>今晚;pasar la noche=>过夜
+st-061|por la mañana=>在早上;hasta mañana=>明天见;mañana temprano=>明天一早
+st-062|este año=>今年;el año pasado=>去年;Feliz Año Nuevo=>新年快乐
+st-063|en la ciudad=>在城里;el centro de la ciudad=>市中心
+st-064|mi país=>我的国家;otro país=>另一个国家;por todo el país=>全国各地
+st-065|en la calle=>在街上;cruzar la calle=>过马路
+st-066|ir a un restaurante=>去餐厅;un restaurante chino=>中餐厅
+st-067|la cuenta, por favor=>请结账;pagar la cuenta=>买单;darse cuenta de=>意识到
+st-068|llamar por teléfono=>打电话;el número de teléfono=>电话号码;el teléfono móvil=>手机
+st-069|mi nombre es Ana=>我叫安娜;el nombre completo=>全名;¿cuál es tu nombre?=>你叫什么名字？
+st-070|hacer una pregunta=>提一个问题;tener una pregunta=>有个问题;responder a la pregunta=>回答问题
+st-071|leer un libro=>读书;un libro de español=>一本西语书
+st-073|reservar un hotel=>订酒店;quedarse en un hotel=>住酒店
+st-074|ir al aeropuerto=>去机场;llegar al aeropuerto=>抵达机场
+st-075|¿dónde está el baño?=>洗手间在哪？;ir al baño=>去洗手间
+st-076|¿cuál es el precio?=>价格是多少？;bajar el precio=>降价;al mejor precio=>以最优价格
+st-077|mucha gente=>很多人;la gente joven=>年轻人|g:阴性集合名词，永远当单数用：la gente es amable
+st-082|tener que trabajar=>必须工作;tengo que irme=>我得走了
+st-085|hablar con amigos=>和朋友聊天;hablar con el jefe=>和上司谈
+st-086|pensar en ti=>想着你;pensar en el futuro=>考虑未来
+st-087|voy a hacer=>我将要做;va a llover=>要下雨了
+st-088|vengo de China=>我来自中国;venir del trabajo=>下了班过来
+st-089|acabo de llegar=>我刚到;acabar de comer=>刚吃完饭
+st-090|no hay de qué=>不客气（另一种说法）;de nada, es un placer=>不客气，我的荣幸|g:固定用语，回答 gracias;m:不客气
+st-091|por supuesto que sí=>当然了;por supuesto que no=>当然不|g:固定表达，比 sí 语气更强
+st-092|vale, vamos=>好，走吧;está bien, de acuerdo=>好的，就这么定|g:西班牙口语最常用的“好的”，拉美多用 está bien
+st-093|me gustaría un café=>我想要杯咖啡;me gustaría ir=>我想去
+st-098|tienes razón=>你说得对;no tener razón=>没道理
+st-099|hace mal tiempo=>天气不好;hace calor=>天气热;hace frío=>天气冷
+st-100|¿cuánto cuesta esto?=>这个多少钱？;cuesta diez euros=>这个十欧元
+st-102|sí, pero...=>是的，但是……;perdón, pero...=>抱歉，不过……
+st-103|yo también=>我也是;también quiero=>我也想要
+st-104|y entonces=>然后呢;pues entonces=>那就这么办
+st-106|padre e hijo=>父与子;siete y media=>七点半
+st-107|siete u ocho=>七八个;o sí o no=>要么行要么不行
+st-108|muy bien=>很好;muy bueno=>很好吃
+st-109|mucho tiempo=>很多时间;muchas gracias=>多谢;trabajar mucho=>干很多活
+st-110|por aquí=>在这附近;ven aquí=>到这儿来
+st-111|ahora mismo=>马上;hasta ahora=>到现在为止
+st-112|después de comer=>吃完饭后;poco después=>不久之后
+st-113|antes de dormir=>睡前;el día antes=>前一天
+st-114|como siempre=>一如既往;casi siempre=>几乎总是
+st-115|casi nunca=>几乎从不;nunca más=>再也不
+st-116|muy bien=>很好;está bien=>好的;hablar bien español=>西语说得好
+st-117|con amigos=>和朋友们;café con leche=>牛奶咖啡;conmigo=>跟我一起
+st-118|sin azúcar=>不加糖;sin problemas=>没问题
+st-119|para ti=>给你的;para siempre=>永远;para hacer ejercicio=>为了锻炼
+st-120|por favor=>请;por la mañana=>在早上;por eso=>因此

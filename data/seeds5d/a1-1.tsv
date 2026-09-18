@@ -1,0 +1,364 @@
+﻿# A1 5D 种子：D4 词块（es=>zh，; 分隔），可选 g:/s2:/m: 覆盖
+a1-001|hay que=>必须;hay un problema=>有个问题
+a1-002|el libro que leo=>我读的那本书;lo que quiero=>我想要的东西|g:关系代词，连接从句修饰名词；lo que = ……的东西
+a1-003|¿qué tal?=>怎么样？;¿qué pasa?=>怎么了？
+a1-004|¿quién es?=>是谁？;¿de quién es?=>这是谁的？
+a1-005|¿cuándo viene?=>他什么时候来？;¿hasta cuándo?=>到什么时候？
+a1-006|¿dónde está?=>在哪儿？;¿de dónde eres?=>你是哪里人？
+a1-007|¿cómo estás?=>你好吗？;¿cómo se dice?=>……用西语怎么说？
+a1-008|¿cuánto cuesta?=>多少钱？;¿cuántos años tienes?=>你多大了？
+a1-009|¿cuál prefieres?=>你更喜欢哪个？;¿cuál es tu número?=>你的号码是多少？
+a1-010|yo también=>我也是;yo creo=>我认为
+a1-011|¿y tú?=>你呢？;tú y yo=>你和我
+a1-012|él dice=>他说;el coche de él=>他的车
+a1-013|ella es mi hermana=>她是我姐姐;para ella=>给她的
+a1-014|¿usted es el señor López?=>您是洛佩斯先生吗？;pase usted=>您请进
+a1-015|nosotros vamos=>我们去;entre nosotros=>咱们之间
+a1-016|ellos son mis amigos=>他们是我的朋友;con ellos=>和他们一起
+a1-017|mi casa=>我家;mi hermano=>我兄弟
+a1-018|tu nombre=>你的名字;tu turno=>该你了
+a1-019|su casa=>他家;su coche=>他的车
+a1-020|este libro=>这本书;este año=>今年
+a1-021|ese chico=>那个男孩;en ese momento=>在那个时候
+a1-022|algo así=>差不多那样;algo más=>再来点别的
+a1-023|no hay nada=>什么都没有;nada más=>就这些
+a1-024|alguien viene=>有人来了;¿hay alguien?=>有人吗？
+a1-025|no hay nadie=>一个人也没有;nadie lo sabe=>没人知道
+a1-026|todo el día=>一整天;de todo=>各种各样的东西
+a1-027|otro día=>改天;otra vez=>再来一次
+a1-028|el mismo día=>同一天;a la misma hora=>同一时间
+a1-029|así que=>所以;así es=>就是这样
+a1-030|ya no=>不再;ya está=>好了
+a1-031|todavía no=>还没有;todavía es temprano=>还早
+a1-032|hasta luego=>回头见;hasta más luego=>一会儿见
+a1-033|muy pronto=>很快;hasta pronto=>回见
+a1-034|muy temprano=>很早;levantarse temprano=>早起
+a1-035|más tarde=>晚些时候;llegar tarde=>迟到
+a1-036|hoy no=>今天不行;hasta hoy=>直到今天
+a1-037|ayer por la noche=>昨天晚上;de ayer=>昨天的
+a1-038|a veces sí=>有时会;salir a veces=>偶尔出去
+a1-039|casi siempre=>几乎总是;casi nada=>几乎没有
+a1-040|cuando tengo tiempo=>我有空的时候;cuando llueve=>下雨的时候
+a1-041|la casa donde vivo=>我住的房子;ir donde Juan=>去胡安那儿|g:关系副词，指地点，相当于 en que / en el que
+a1-042|tomar un café=>喝杯咖啡;tomar el sol=>晒太阳;tomar el autobús=>坐公交|m:喝；乘坐
+a1-043|abrir la puerta=>开门;abrir la ventana=>开窗
+a1-044|cerrar la puerta=>关门;cerrar con llave=>锁上
+a1-045|empezar a hacer algo=>开始做某事;empezar de nuevo=>重新开始
+a1-046|terminar de hacer algo=>做完某事;terminar el trabajo=>完成工作
+a1-047|ayudar a alguien=>帮助某人;ayudar con la casa=>帮忙做家务
+a1-048|buscar trabajo=>找工作;buscar las llaves=>找钥匙
+a1-049|llevar una camisa=>穿着衬衫;llevar un paraguas=>带着伞
+a1-050|usar el móvil=>用手机;usar la computadora=>用电脑
+a1-051|cocinar bien=>做饭好吃;cocinar para la familia=>给家人做饭
+a1-052|esperar a alguien=>等某人;esperar el autobús=>等公交
+a1-053|llegar a casa=>到家;llegar tarde=>迟到
+a1-054|salir de casa=>出门;salir con amigos=>和朋友出去玩
+a1-055|entrar en la clase=>进教室;entrar sin llamar=>没敲门就进
+a1-056|subir al autobús=>上公交;subir la escalera=>上楼
+a1-057|bajar del autobús=>下公交;bajar la escalera=>下楼
+a1-058|¿qué pasa?=>怎么了？;pasar el fin de semana=>过周末
+a1-059|dejar un mensaje=>留个口信;dejar de fumar=>戒烟
+a1-060|perder el autobús=>错过公交;perder las llaves=>丢了钥匙
+a1-061|encontrar trabajo=>找到工作;no lo encuentro=>我找不到它
+a1-062|mostrar el billete=>出示车票;mostrar una foto=>给人看照片
+a1-063|cambiar de opinión=>改变主意;cambiar dinero=>换钱
+a1-064|guardar en el armario=>收进衣柜;guardar las cosas=>收拾东西
+a1-065|lavar los platos=>洗碗;lavarse las manos=>洗手
+a1-066|limpiar la casa=>打扫房间;limpiar la mesa=>擦桌子
+a1-067|jugar al fútbol=>踢足球;jugar con los niños=>和小孩玩
+a1-068|correr rápido=>跑得快;correr en el parque=>在公园跑步
+a1-069|caminar por la playa=>在海滩散步;caminar despacio=>慢慢走
+a1-070|nadar en el mar=>在海里游泳;saber nadar=>会游泳
+a1-071|cantar bien=>唱歌好听;cantar una canción=>唱一首歌
+a1-072|bailar salsa=>跳萨尔萨;bailar bien=>舞跳得好
+a1-073|desayunar rápido=>匆忙吃早饭;desayunar en casa=>在家吃早饭
+a1-074|cenar fuera=>在外面吃晚饭;cenar a las nueve=>九点吃晚饭
+a1-075|seguir con la lección=>继续上课;seguir a alguien=>跟着某人
+a1-076|sentarse a la mesa=>入席;siéntate aquí=>坐这儿
+a1-077|ponerse el abrigo=>穿上大衣;ponerse de pie=>站起来
+a1-078|quitarse los zapatos=>脱鞋;quitarse el sombrero=>摘帽子
+a1-079|probar la comida=>尝尝菜;probar suerte=>试试运气
+a1-080|preparar la cena=>做晚饭;preparar un examen=>备考
+a1-081|invitar a alguien=>邀请某人;invitar a un café=>请喝咖啡
+a1-082|regalar flores=>送花;regalar un libro=>送一本书
+a1-083|visitar un museo=>参观博物馆;visitar a la abuela=>去看奶奶
+a1-084|celebrar un cumpleaños=>过生日;celebrar una fiesta=>办聚会
+a1-085|deber estudiar=>应该学习;deber dinero=>欠钱
+a1-086|preferir el té=>更爱喝茶;preferir quedarse=>宁愿留下
+a1-087|pedir la cuenta=>要账单;pedir permiso=>请求许可|m:点（餐）；请求
+a1-088|traer un regalo=>带来礼物;traer algo de comer=>带点吃的来
+a1-089|explicar el problema=>解释问题;explicarlo otra vez=>再讲一遍
+a1-090|aprender español=>学西语;aprender a cocinar=>学做饭
+a1-091|enseñar español=>教西语;enseñar el camino=>指路|m:教；展示
+a1-092|recordar el nombre=>记得名字;no recuerdo=>我不记得了
+a1-093|olvidar las llaves=>忘了带钥匙;olvidar hacer algo=>忘了做某事
+a1-094|decidir hacer algo=>决定做某事;decidir el día=>定日子
+a1-095|sentir mucho=>非常遗憾;sentir un dolor=>感到疼
+a1-096|creo que sí=>我觉得是;no creo que sea así=>我不认为是这样
+a1-097|pensar en ti=>想着你;pensar que=>认为
+a1-098|la una=>一点钟;número uno=>第一名
+a1-099|uno de nosotros=>我们中的一个;a la una=>在一点
+a1-100|a las dos=>在两点;los dos=>两个都
+a1-101|tres veces=>三次;de tres=>三个一组
+a1-102|cuatro personas=>四个人;las cuatro=>四点
+a1-103|cinco minutos=>五分钟;cinco años=>五年
+a1-104|seis de la mañana=>早上六点;seis personas=>六个人
+a1-105|siete días=>七天;de siete a ocho=>从七点到八点
+a1-106|a las ocho=>在八点;ocho horas=>八小时
+a1-107|nueve meses=>九个月;el número nueve=>数字九
+a1-108|diez euros=>十欧元;diez minutos=>十分钟
+a1-109|once jugadores=>十一名球员;la una y once=>一点十一分
+a1-110|las doce=>十二点;a las doce=>在十二点
+a1-111|trece de octubre=>十月十三日;el número trece=>数字十三
+a1-112|catorce de febrero=>二月十四日;catorce días=>两周
+a1-113|quince días=>十五天;el día quince=>十五号
+a1-114|veinte años=>二十岁;veinte minutos=>二十分钟
+a1-115|treinta y dos=>三十二;treinta años=>三十年
+a1-116|cuarenta grados=>四十度;cuarenta euros=>四十欧元
+a1-117|cincuenta por ciento=>百分之五十;cincuenta personas=>五十人
+a1-118|sesenta segundos=>六十秒;sesenta kilómetros=>六十公里
+a1-119|setenta años=>七十岁;setenta euros=>七十欧元
+a1-120|ochenta euros=>八十欧元;ochenta kilómetros=>八十公里
+a1-121|noventa días=>九十天;noventa años=>九十岁
+a1-122|cien por cien=>百分之百;cien euros=>一百欧元
+a1-123|mil gracias=>万分感谢;dos mil=>两千
+a1-124|el lunes que viene=>下周一;todos los lunes=>每周一
+a1-125|el martes por la noche=>周二晚上;este martes=>这周二
+a1-126|el próximo miércoles=>下周三;miércoles por la tarde=>周三下午
+a1-127|el jueves por la tarde=>周四下午;este jueves=>这周四
+a1-128|¡feliz viernes!=>周五快乐;viernes por la noche=>周五晚上
+a1-129|el sábado por la mañana=>周六上午;sábado noche=>周六晚上
+a1-130|el domingo en familia=>周日的家庭时光;domingo por la tarde=>周日下午
+a1-131|el fin de semana pasado=>上周末;pasar el fin de semana=>过周末
+a1-132|en enero=>在一月;a finales de enero=>一月底
+a1-133|el catorce de febrero=>二月十四日;en febrero=>在二月
+a1-134|a mediados de marzo=>三月中旬;en marzo=>在三月
+a1-135|en abril=>在四月;las lluvias de abril=>四月的雨
+a1-136|el uno de mayo=>五月一日;en mayo=>在五月
+a1-137|las vacaciones de junio=>六月的假期;en junio=>在六月
+a1-138|hace calor en julio=>七月很热;en julio=>在七月
+a1-139|las vacaciones de agosto=>八月的假期;la playa en agosto=>八月的海滩
+a1-140|en septiembre vuelve la escuela=>九月开学;a principios de septiembre=>九月初
+a1-141|a principios de octubre=>十月初;en octubre=>在十月
+a1-142|finales de noviembre=>十一月底;en noviembre=>在十一月
+a1-143|las fiestas de diciembre=>十二月的节日;en diciembre=>在十二月
+a1-144|mi madre y yo=>我和我妈;la madre de Ana=>安娜的妈妈
+a1-145|mi padre trabaja=>我爸爸工作;el padre de familia=>一家之父
+a1-146|mi hermano mayor=>我哥哥;hermano menor=>弟弟
+a1-147|mi hermana pequeña=>我妹妹;hermanas gemelas=>双胞胎姐妹
+a1-148|su hijo pequeño=>他的小儿子;hijo único=>独生子
+a1-149|su hija mayor=>她的大女儿;hija querida=>宝贝女儿
+a1-150|su esposo=>她的丈夫;esposo y esposa=>夫妻俩
+a1-151|mi esposa=>我的妻子;la esposa de Juan=>胡安的妻子
+a1-152|los abuelos=>祖父母;abuelo cariñoso=>慈祥的爷爷
+a1-153|la abuela cocina=>奶奶做饭;abuela materna=>外婆
+a1-154|mi tío favorito=>我最喜欢的叔叔;los tíos=>叔叔婶婶们
+a1-155|la tía de Madrid=>马德里的姑姑;tía política=>婶婶
+a1-156|mis primos pequeños=>我的堂弟们;primo hermano=>亲堂兄弟
+a1-157|mi prima mayor=>我表姐;primas lejanas=>远房表姐妹
+a1-158|un hombre alto=>高个子男人;el hombre de la casa=>家里的男人
+a1-159|una mujer fuerte=>坚强的女性;mujer trabajadora=>职业女性
+a1-160|un niño pequeño=>小男孩;niños y niñas=>男孩和女孩们
+a1-161|una niña feliz=>快乐的女孩;niña buena=>乖女孩
+a1-162|un chico simpático=>友善的小伙子;el chico de la tienda=>店里的男孩
+a1-163|una chica guapa=>漂亮姑娘;las chicas=>姑娘们
+a1-164|el bebé llora=>宝宝哭了;bebé recién nacido=>新生儿
+a1-165|una persona amable=>友善的人;personas mayores=>老年人
+a1-166|el señor García=>加西亚先生;señor y señora=>先生和太太
+a1-167|la señora López=>洛佩斯太太;señora mayor=>年长的女士
+a1-168|me duele la cabeza=>我头疼;usar la cabeza=>动动脑子
+a1-169|ojos azules=>蓝眼睛;ojos marrones=>棕色眼睛
+a1-170|dar la mano=>握手;mano izquierda=>左手
+a1-171|pie derecho=>右脚;a pie=>步行
+a1-172|abrir la boca=>张开嘴;cerrar la boca=>闭上嘴
+a1-173|pelo largo=>长发;pelo castaño=>棕色头发
+a1-174|brazo derecho=>右臂;cruzar los brazos=>抱起双臂
+a1-175|piernas largas=>长腿;romperse una pierna=>摔断了腿
+a1-176|corazón sano=>健康的心脏;con todo mi corazón=>全心全意
+a1-177|dolor de estómago=>胃疼;con el estómago vacío=>空着肚子
+a1-178|ir al médico=>去看医生;el médico de familia=>家庭医生
+a1-179|tomar la medicina=>吃药;medicina para el dolor=>止痛药
+a1-180|estar en el hospital=>住院;hospital público=>公立医院
+a1-181|ir a la farmacia=>去药店;farmacia de guardia=>夜间值班药店
+a1-182|pan fresco=>新鲜面包;pan con mantequilla=>黄油面包
+a1-183|un vaso de leche=>一杯牛奶;leche fría=>冰牛奶
+a1-184|té verde=>绿茶;una taza de té=>一杯茶
+a1-185|vino tinto=>红葡萄酒;una copa de vino=>一杯葡萄酒
+a1-186|pedir una cerveza=>点一杯啤酒;cerveza fría=>冰啤酒
+a1-187|zumo de naranja=>橙汁;zumo natural=>鲜榨果汁
+a1-188|huevos revueltos=>炒蛋;huevo frito=>煎蛋
+a1-189|carne asada=>烤肉;carne de res=>牛肉
+a1-190|pescado fresco=>新鲜的鱼;pescado frito=>炸鱼
+a1-191|pollo asado=>烤鸡;pechuga de pollo=>鸡胸肉
+a1-192|arroz blanco=>白米饭;un plato de arroz=>一盘米饭
+a1-193|sopa caliente=>热汤;sopa de pollo=>鸡汤
+a1-194|ensalada fresca=>新鲜沙拉;ensalada de frutas=>水果沙拉
+a1-195|fruta fresca=>新鲜水果;comer fruta=>吃水果
+a1-196|zumo de manzana=>苹果汁;manzana verde=>青苹果
+a1-197|un plátano maduro=>一根熟香蕉;plátanos fritos=>炸香蕉
+a1-198|zumo de naranja natural=>鲜榨橙汁;naranjas de Valencia=>瓦伦西亚橙
+a1-199|salsa de tomate=>番茄酱;tomates cherry=>圣女果
+a1-200|patatas fritas=>薯条;patata cocida=>煮土豆
+a1-201|queso manchego=>曼彻格奶酪;pan con queso=>面包配奶酪
+a1-202|café con azúcar=>加糖咖啡;sin azúcar=>不加糖
+a1-203|echar sal=>加盐;con poca sal=>少放盐
+a1-204|desayuno completo=>丰盛的早餐;el desayuno está listo=>早餐好了
+a1-205|hora del almuerzo=>午饭时间;almuerzo ligero=>简便午餐
+a1-206|la cena de hoy=>今天的晚饭;después de la cena=>晚饭后
+a1-207|de postre=>作为甜点;postre del día=>当日甜点
+a1-208|helado de chocolate=>巧克力冰淇淋;helado de vainilla=>香草冰淇淋
+a1-209|un vaso de agua=>一杯水;vaso de plástico=>塑料杯
+a1-210|una taza de café=>一杯咖啡;taza de té=>茶杯
+a1-211|plato principal=>主菜;plato del día=>当日套餐|m:盘子
+a1-212|cuchara de sopa=>汤匙;con la cuchara=>用勺子
+a1-213|cuchillo de mesa=>餐刀;cuchillo y tenedor=>刀叉
+a1-214|tenedor y cuchillo=>刀叉;un tenedor limpio=>干净的叉子
+a1-215|botella de agua=>一瓶水;botella de vino=>一瓶葡萄酒
+a1-216|menú del día=>当日套餐;ver el menú=>看菜单
+a1-217|dejar propina=>给小费;propina incluida=>小费已含
+a1-218|llamar al camarero=>叫服务员;un camarero simpático=>友善的服务员
+a1-219|comer comida rápida=>吃快餐;comida rápida y barata=>又快又便宜的餐食
+a1-220|tienda de ropa=>服装店;ir a la tienda=>去商店
+a1-221|ir al supermercado=>去超市;en el supermercado=>在超市里
+a1-222|ir a la escuela=>去上学;escuela primaria=>小学
+a1-223|estudiar en la universidad=>读大学;entrar en la universidad=>考上大学
+a1-224|en clase=>在课上;la clase de español=>西语课
+a1-225|el profesor de español=>西语老师;preguntar al profesor=>问老师
+a1-226|la profesora de historia=>历史老师;una profesora exigente=>严格的老师
+a1-227|estudiante de intercambio=>交换生;un estudiante aplicado=>用功的学生
+a1-228|una estudiante nueva=>新来的女学生;estudiante universitaria=>大学生（女）
+a1-229|la lección de hoy=>今天的课;primera lección=>第一课
+a1-230|aprender palabras=>学单词;palabra nueva=>生词
+a1-231|letra mayúscula=>大写字母;letra pequeña=>小写字母
+a1-232|número de teléfono=>电话号码;número impar=>奇数
+a1-233|cuaderno de notas=>笔记本;un cuaderno nuevo=>一个新本子
+a1-234|lápiz y papel=>纸和笔;un lápiz rojo=>一支红铅笔
+a1-235|bolígrafo azul=>蓝色圆珠笔;sacar un bolígrafo=>掏出一支笔
+a1-236|mochila escolar=>书包;llevar una mochila=>背着背包
+a1-237|ordenador portátil=>笔记本电脑;encender el ordenador=>打开电脑
+a1-238|computadora portátil=>笔记本电脑（拉美）;usar la computadora=>用电脑
+a1-239|pantalla grande=>大屏幕;mirar la pantalla=>看屏幕
+a1-240|billete de ida=>单程票;billete de avión=>机票|m:票
+a1-241|boleto de autobús=>公交票（拉美）;boleto de ida y vuelta=>往返票
+a1-242|estación de tren=>火车站;estación de metro=>地铁站
+a1-243|tomar el metro=>坐地铁;en metro=>乘地铁
+a1-244|tomar el autobús=>坐公交;parada de autobús=>公交站
+a1-245|tren de alta velocidad=>高铁;tomar el tren=>坐火车
+a1-246|billete de avión=>机票;viajar en avión=>坐飞机旅行
+a1-247|tomar un taxi=>打车;taxi libre=>空出租车
+a1-248|parada de autobús=>公交站;en la parada=>在站台
+a1-249|mirar el mapa=>看地图;mapa de la ciudad=>城市地图
+a1-250|ir a la playa=>去海滩;playa de arena=>沙滩
+a1-251|montaña alta=>高山;subir la montaña=>爬山
+a1-252|el mar Mediterráneo=>地中海;ver el mar=>看海
+a1-253|tomar el sol=>晒太阳;hoy hace sol=>今天是大晴天|m:太阳
+a1-254|pasear por el parque=>在公园散步;parque infantil=>儿童乐园
+a1-255|ir al cine=>去看电影;entrada de cine=>电影票
+a1-256|visitar el museo=>参观博物馆;museo de arte=>艺术博物馆
+a1-257|ir al banco=>去银行;banco abierto=>营业中的银行
+a1-258|oficina central=>总部;en la oficina=>在办公室
+a1-259|el centro de la ciudad=>市中心;centro comercial=>商场|m:市中心
+a1-260|iglesia antigua=>古老的教堂;ir a la iglesia=>去教堂
+a1-261|habitación doble=>双人间;reservar una habitación=>订房间
+a1-262|cuarto de baño=>卫生间;un cuarto pequeño=>小房间
+a1-263|abrir la puerta=>开门;cerrar la puerta con llave=>锁门
+a1-264|abrir la ventana=>开窗;junto a la ventana=>靠窗
+a1-265|en la mesa=>在桌上;poner la mesa=>摆餐具
+a1-266|sentarse en la silla=>坐在椅子上;silla de madera=>木椅
+a1-267|ir a la cama=>去睡觉;cama individual=>单人床
+a1-268|sentarse en el sofá=>坐在沙发上;sofá nuevo=>新沙发
+a1-269|armario de ropa=>衣柜;guardarlo en el armario=>收进衣柜
+a1-270|llave de la casa=>家门钥匙;perder las llaves=>丢了钥匙
+a1-271|subir por la escalera=>爬楼梯;escalera automática=>自动扶梯
+a1-272|tomar el ascensor=>乘电梯;ascensor roto=>电梯坏了
+a1-273|vivir en un piso=>住公寓;piso de abajo=>楼下|m:楼层；公寓
+a1-274|encender la luz=>开灯;apagar la luz=>关灯|m:灯
+a1-275|tomar una ducha=>冲个澡;agua de la ducha=>淋浴的水
+a1-276|ropa limpia=>干净衣服;lavar la ropa=>洗衣服
+a1-277|camisa blanca=>白衬衫;camisa de manga larga=>长袖衬衫
+a1-278|camiseta de algodón=>棉T恤;camiseta nueva=>新T恤
+a1-279|pantalones vaqueros=>牛仔裤;pantalones cortos=>短裤
+a1-280|vestido rojo=>红裙子;vestido de fiesta=>礼服裙
+a1-281|falda larga=>长裙;una falda bonita=>一条好看的裙子
+a1-282|zapatos de tacón=>高跟鞋;zapatos cómodos=>舒服的鞋
+a1-283|botas de invierno=>冬靴;un par de botas=>一双靴子
+a1-284|abrigo de lana=>羊毛大衣;ponerse el abrigo=>穿上大衣
+a1-285|chaqueta de cuero=>皮夹克;quitarse la chaqueta=>脱下外套
+a1-286|sombrero de playa=>沙滩草帽;ponerse el sombrero=>戴上帽子
+a1-287|bufanda de lana=>羊毛围巾;ponerse la bufanda=>围上围巾
+a1-288|bolsa de plástico=>塑料袋;una bolsa grande=>一个大包
+a1-289|gafas de sol=>太阳镜;llevar gafas=>戴眼镜
+a1-290|reloj de pulsera=>手表;mirar el reloj=>看表|m:手表
+a1-291|¿de qué color es?=>是什么颜色？;color favorito=>最喜欢的颜色
+a1-292|un coche rojo=>一辆红车;labios rojos=>红唇
+a1-293|cielo azul=>蓝天;una camisa azul=>蓝衬衫
+a1-294|verde claro=>浅绿色;verde oscuro=>深绿色
+a1-295|flor amarilla=>黄花;el color amarillo=>黄色
+a1-296|café negro=>不加奶的咖啡;un gato negro=>黑猫
+a1-297|vino blanco=>白葡萄酒;papel blanco=>白纸
+a1-298|árbol alto=>大树;a la sombra del árbol=>在树荫下
+a1-299|flores frescas=>鲜花;regalar flores=>送花
+a1-300|cielo azul=>蓝天;cielo nublado=>阴天
+a1-301|lluvia fuerte=>大雨;mojado por la lluvia=>被雨淋湿
+a1-302|jugar con la nieve=>玩雪;caer nieve=>下雪
+a1-303|bueno para la salud=>对健康有好处;es muy bueno=>非常好
+a1-304|malo para la salud=>对健康有害;mal tiempo=>坏天气
+a1-305|una casa grande=>大房子;de tamaño grande=>大号
+a1-306|un piso pequeño=>小公寓;negocio pequeño=>小生意
+a1-307|coche nuevo=>新车;empezar de nuevo=>重新开始
+a1-308|un libro viejo=>旧书;un amigo viejo=>老朋友
+a1-309|gente joven=>年轻人;de joven=>年轻的时候
+a1-310|un chico guapo=>帅哥;¡qué guapo!=>真帅！
+a1-311|un piso bonito=>漂亮的公寓;bonito nombre=>好听的名字
+a1-312|feliz cumpleaños=>生日快乐;ser feliz=>过得幸福
+a1-313|estar triste=>难过;una película triste=>催泪的电影
+a1-314|estar contento=>开心;contento con el regalo=>对礼物满意
+a1-315|comida rica=>好吃的东西;sabe rico=>很好吃|m:好吃的
+a1-316|demasiado caro=>太贵了;un coche caro=>一辆贵的车
+a1-317|muy barato=>很便宜;barato pero bueno=>便宜又好
+a1-318|muy fácil=>很容易;fácil de usar=>容易上手
+a1-319|difícil de entender=>难以理解;un examen difícil=>一场难的考试
+a1-320|pelo largo=>长发;un camino largo=>漫长的路
+a1-321|pelo corto=>短发;pantalones cortos=>短裤
+a1-322|un chico alto=>高个子男生;edificio alto=>高楼
+a1-323|un chico bajo=>矮个子男生;en voz baja=>低声地
+a1-324|servicio rápido=>快捷的服务;correr rápido=>跑得快
+a1-325|servicio lento=>慢吞吞的服务;ir lento=>慢慢走
+a1-326|agua caliente=>热水;comida caliente=>热乎的饭菜
+a1-327|hace frío=>天气冷;agua fría=>凉水
+a1-328|estar lleno=>吃饱了;autobús lleno=>挤满人的公交
+a1-329|el restaurante está vacío=>餐厅空无一人;un vaso vacío=>空杯子
+a1-330|la tienda está abierta=>店还开着;dejar la puerta abierta=>让门开着
+a1-331|cerrado por vacaciones=>歇业度假;hoy cerrado=>今日不营业
+a1-332|ropa limpia=>干净的衣服;aire limpio=>清新的空气
+a1-333|manos sucias=>脏手;zapatos sucios=>脏鞋
+a1-334|un hombre fuerte=>强壮的男人;café fuerte=>浓咖啡
+a1-335|una chica delgada=>苗条的女孩;un cuerpo delgado=>瘦削的身材
+a1-336|un gato gordo=>肥猫;estar gordo=>发胖了
+a1-337|una niña inteligente=>聪明的女孩;muy inteligente=>非常聪明
+a1-338|noticia importante=>重要新闻;algo importante=>重要的事
+a1-339|tema interesante=>有意思的话题;libro interesante=>有趣的书
+a1-340|estar aburrido=>感到无聊;una clase aburrida=>无聊的课
+a1-341|ser divertido=>很搞笑;un día divertido=>好玩的一天
+a1-342|estar enfermo=>生病了;caer enfermo=>病倒了
+a1-343|un lugar seguro=>安全的地方;estar seguro de=>确信
+a1-344|una persona simpática=>友善的人;un profesor simpático=>和气的老师
+a1-345|gente amable=>友善的人们;ser amable con alguien=>对某人友好
+a1-346|un hombre serio=>严肃的男人;hablar en serio=>说正经的
+a1-347|un pueblo tranquilo=>宁静的小镇;¡tranquilo!=>放轻松！
+a1-348|tiempo libre=>空闲时间;ser libre=>自由
+a1-349|si es posible=>如果可以的话;todo es posible=>一切皆有可能
+a1-350|tengo frío=>我很冷;tener mucho frío=>非常冷
+a1-351|tengo calor=>我很热;tener mucho calor=>热得不行
+a1-352|tengo sed=>我渴了;tener mucha sed=>非常渴
+a1-353|tengo prisa=>我赶时间;tener mucha prisa=>特别急
+a1-354|hace mucho frío=>非常冷;fuera hace frío=>外面很冷
+a1-355|hace mucho calor=>非常热;hoy hace calor=>今天很热
+a1-356|hoy hace sol=>今天晴;tomar el sol en la playa=>在海滩晒太阳
+a1-357|está lloviendo mucho=>雨下得很大;sigue lloviendo=>雨还在下
+a1-358|hay que estudiar=>得学习;hay que trabajar=>得工作
+a1-359|más o menos bien=>还可以;entiendo más o menos=>我大致听懂了
+a1-360|no pasa nada, tranquilo=>没事的，别担心;aquí no pasa nada=>这里什么事都没有
+a1-361|¡claro que sí!=>当然可以！;claro, cómo no=>当然，没问题
+a1-362|un poco de agua=>一点水;un poco cansado=>有点累
+a1-363|muy bien, gracias=>很好，谢谢;hablas muy bien=>你说得非常好
