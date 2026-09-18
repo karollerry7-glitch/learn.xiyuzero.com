@@ -322,7 +322,8 @@ function parseSeeds() {
         }
         chunks.push({ spanish: m[0].trim(), chinese: m[1].trim() });
       }
-      if (chunks.length < 2) errors.push(`${ln} 词块不足 2 个（${chunks.length}）`);
+      if (chunks.length < 1) errors.push(`${ln} 词块为空`);
+      else if (chunks.length < 2) oneChunk++;
       // 可选字段
       let grammar, sent2, meaning;
       for (const o of opts) {
@@ -342,6 +343,7 @@ function parseSeeds() {
 }
 
 // ================= 主流程 =================
+let oneChunk = 0;
 const { seeds, errors } = parseSeeds();
 const unitById = new Map(units.map((u) => [u.id, u]));
 
@@ -421,6 +423,7 @@ for (const [id] of entries5) {
 console.log("=== 5D 生成 ===");
 console.log(`词条总数: ${total}  手工卡: ${core5Ids.size}  种子生成: ${covered}`);
 console.log(`覆盖率: ${core5Ids.size + covered}/${total}（${(((core5Ids.size + covered) / total) * 100).toFixed(1)}%）`);
+console.log(`单词块词条: ${oneChunk} 条（locution 类词条本身即词块，正常）`);
 for (const [lv, n] of Object.entries(byLevel)) console.log(`  ${lv}: ${n}`);
 if (errors.length) {
   console.log(`\n=== 错误 ${errors.length} 条（必须修复）===`);

@@ -55,11 +55,29 @@ if (files.length === 0) {
   process.exit(1);
 }
 
+// 每级 id 分配状态：文件内 seq 会在下一个种子文件重置，
+// 必须去重——首次出现的 id 保持不变（保住用户 SRS 进度），
+// 重复者分配该级下一个空闲编号。
+const idState = {}; // level -> { used: Set<string>, next: number }
+function allocId(level, seq) {
+  const st = (idState[level] ??= { used: new Set(), next: 1 });
+  const mk = (n) => `${level}-${String(n).padStart(3, "0")}`;
+  let id = mk(seq);
+  if (st.used.has(id)) {
+    st.next = Math.max(st.next, seq + 1);
+    while (st.used.has(mk(st.next))) st.next++;
+    id = mk(st.next);
+  }
+  st.used.add(id);
+  return id;
+}
+
 const errors = [];
 const warnings = [];
 const entries = [];
 const seenEs = new Map(); // norm(es) -> id
 let exMiss = 0;
+let reIded = 0;
 
 for (const file of files) {
   const level = file.split("-")[0]; // a1/a2/b1/b2
@@ -132,7 +150,8 @@ for (const file of files) {
     else if (posCode === "sent") type = "sentence-pattern";
 
     seq++;
-    const id = `${level}-${String(seq).padStart(3, "0")}`;
+    const id = allocId(level, seq);
+    if (id !== `${level}-${String(seq).padStart(3, "0")}`) reIded++;
     if (coreIds.has(id)) errors.push(`${ln} id "${id}" 与核心词库冲突`);
 
     entries.push({
@@ -174,6 +193,7 @@ for (const e of entries) {
 }
 console.log("=== 生成完成 ===");
 console.log(`核心词条: ${coreIds.size}  新增: ${entries.length}  总计: ${coreIds.size + entries.length}`);
+console.log(`id 去重重分配: ${reIded} 条（跨文件 seq 重复）`);
 for (const [lv, c] of Object.entries(byLevel)) console.log(`  ${lv}: +${c.n}`);
 console.log(`例句未包含目标词: ${exMiss} 条（Cloze 会跳过这些，不致命）`);
 if (warnings.length) {
