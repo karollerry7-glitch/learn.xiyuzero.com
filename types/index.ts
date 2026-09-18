@@ -92,6 +92,7 @@ export interface Settings {
   dailyNew: number;
   targetLevel: Level;
   voiceLocale: "es-MX" | "es-ES";
+  voiceGender: "female" | "male";
   rate: number; // 0.7 | 0.85 | 1.0
   tracks: string[]; // Travel / Social / Business
   goal: string;
@@ -111,6 +112,7 @@ export const DEFAULT_SETTINGS: Settings = {
   dailyNew: 20,
   targetLevel: "B2",
   voiceLocale: "es-MX",
+  voiceGender: "female",
   rate: 0.85,
   tracks: [],
   goal: "综合西班牙语",

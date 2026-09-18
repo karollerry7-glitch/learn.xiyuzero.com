@@ -1,9 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // 全静态导出：所有页面均为静态内容（数据存 LocalStorage），
-  // 部署最简单，且天然规避 Windows 本地构建的 symlink 问题。
-  output: "export",
+  // 标准 Next.js 模式：页面仍为静态预渲染（数据存 LocalStorage），
+  // 同时支持 /api/tts 服务端路由（云端真人级发音代理）。
   images: { unoptimized: true },
 };
 

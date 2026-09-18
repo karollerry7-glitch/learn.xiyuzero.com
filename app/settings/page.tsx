@@ -78,8 +78,29 @@ export default function SettingsPage() {
             </button>
           ))}
         </div>
+        <h2 className="font-semibold pt-2">音色</h2>
+        <div className="flex gap-2">
+          {(
+            [
+              { v: "female", label: "女声 · Dalia / Elvira" },
+              { v: "male", label: "男声 · Jorge / Álvaro" },
+            ] as const
+          ).map((o) => (
+            <button
+              key={o.v}
+              onClick={() => updateSettings({ voiceGender: o.v })}
+              className={`px-4 py-2 rounded-xl text-sm transition ${
+                s.voiceGender === o.v
+                  ? "bg-[#C62828] text-white"
+                  : "border border-black/10 hover:border-[#C62828]/40"
+              }`}
+            >
+              {o.label}
+            </button>
+          ))}
+        </div>
         <p className="text-xs text-[#182230]/50">
-          找不到所选口音时，会自动使用浏览器可用的西班牙语发音。
+          使用微软神经网络真人级发音（云端合成）。网络异常时自动回退浏览器发音。
         </p>
       </section>
 
