@@ -41,3 +41,6 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# 微信云托管 CLI 密钥（绝不入库）
+cloudbase.key
