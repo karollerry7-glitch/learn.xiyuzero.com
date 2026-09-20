@@ -10,6 +10,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "node:crypto";
+import { put } from "@vercel/blob";
 import { signToken } from "@/lib/auth";
 
 const TOKEN_TTL_SECONDS = 7 * 24 * 60 * 60; // 7 天
@@ -78,6 +79,18 @@ export async function POST(req: NextRequest) {
 
   const userId = deriveUserId(openid);
   const now = Math.floor(Date.now() / 1000);
+
+  // 持久化 openid 映射（支付下单时定位支付人；失败不阻断登录）
+  try {
+    await put(
+      `useropenid/${userId}`,
+      JSON.stringify({ openid, updatedAt: Date.now() }),
+      { access: "private", allowOverwrite: true, contentType: "application/json" }
+    );
+  } catch {
+    /* 非关键路径 */
+  }
+
   const payload: SessionPayload = {
     sub: userId,
     exp: now + TOKEN_TTL_SECONDS,

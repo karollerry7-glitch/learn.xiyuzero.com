@@ -27,6 +27,51 @@ export const FREE_DAILY_NEW_WORD_LIMIT = 5;
 export const FREE_LEVELS: readonly string[] = ["Starter", "A1"];
 export const TOTAL_UNITS = 4505;
 
+// ---- Pro 定价（分；服务端唯一真源，客户端只用于展示） ----
+export const PRO_MONTHLY_PRICE_CENTS = 1990; // ¥19.9
+export const PRO_YEARLY_PRICE_CENTS = 12800; // ¥128
+
+/** 可售周期价格（分）；lifetime 暂不售卖（返回 null） */
+export function priceOfCycle(cycle: BillingCycle): number | null {
+  switch (cycle) {
+    case "monthly":
+      return PRO_MONTHLY_PRICE_CENTS;
+    case "yearly":
+      return PRO_YEARLY_PRICE_CENTS;
+    default:
+      return null;
+  }
+}
+
+/**
+ * 授予/续期 Pro：从 max(现在, 现有到期时间) 起算，避免续费用户损失剩余时长。
+ * 纯函数，可测。写库必须走 writeMembership。
+ */
+export function grantPro(
+  rec: MembershipRecord,
+  cycle: BillingCycle,
+  now: Date = new Date()
+): MembershipRecord {
+  const currentEnd = rec.proUntil ? new Date(rec.proUntil).getTime() : 0;
+  const base = new Date(Math.max(now.getTime(), currentEnd));
+  let end: Date;
+  if (cycle === "lifetime") {
+    end = new Date("2099-12-31T23:59:59.000Z");
+  } else if (cycle === "yearly") {
+    end = new Date(base);
+    end.setUTCFullYear(end.getUTCFullYear() + 1);
+  } else {
+    end = new Date(base);
+    end.setUTCMonth(end.getUTCMonth() + 1);
+  }
+  return {
+    plan: "pro",
+    billingCycle: cycle,
+    proUntil: end.toISOString(),
+    updatedAt: now.getTime(),
+  };
+}
+
 export interface MembershipUsage {
   date: string; // 服务端 UTC 日期（YYYY-MM-DD）
   newLearnedToday: number;
