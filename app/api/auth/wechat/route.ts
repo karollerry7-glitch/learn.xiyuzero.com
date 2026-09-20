@@ -10,6 +10,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "node:crypto";
+import { signToken } from "@/lib/auth";
 
 const TOKEN_TTL_SECONDS = 7 * 24 * 60 * 60; // 7 天
 
@@ -17,23 +18,6 @@ interface SessionPayload {
   sub: string; // 用户 id（openid 派生，openid 永不直接暴露）
   exp: number; // 过期时间戳（秒）
   dev?: boolean; // 是否开发模式令牌
-}
-
-function b64url(input: Buffer | string): string {
-  return Buffer.from(input).toString("base64url");
-}
-
-function getAuthSecret(): string {
-  return process.env.AUTH_SECRET || "dev-only-insecure-secret-change-me";
-}
-
-function signToken(payload: SessionPayload): string {
-  const body = b64url(JSON.stringify(payload));
-  const sig = crypto
-    .createHmac("sha256", getAuthSecret())
-    .update(body)
-    .digest("base64url");
-  return `${body}.${sig}`;
 }
 
 /** openid → 稳定用户 id（永不直接用 openid 当业务 id） */
