@@ -87,8 +87,8 @@ test("JSAPI paySign 原文与签名验证", () => {
 
 test("定价：服务端唯一真源（分）", () => {
   assert.equal(priceOfCycle("monthly"), 1990); // ¥19.9
-  assert.equal(priceOfCycle("yearly"), 12800); // ¥128
-  assert.equal(priceOfCycle("lifetime"), null); // 暂不售卖
+  assert.equal(priceOfCycle("yearly"), 2990); // ¥29.9/年（唯一在售）
+  assert.equal(priceOfCycle("lifetime"), null); // 已下架
 });
 
 test("grantPro：Free → 月卡 +1 个月", () => {

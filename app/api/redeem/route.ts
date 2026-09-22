@@ -1,13 +1,13 @@
-// POST /api/redeem — 兑换码激活 Pro（终身）
+// POST /api/redeem — 兑换码激活 Pro（年费）
 //
-// 售卖模式（第一版）：客服微信收款（¥99.9）→ 运营发放兑换码 → 用户在会员页输入激活。
+// 售卖模式：客服微信收款（¥29.9/年）→ 运营发放兑换码 → 用户在会员页输入激活。
 // 安全设计：
 //   1. 代码库只存兑换码的 SHA-256 哈希（明文仅在运营手里）；
 //   2. 每码只能激活 1 个账号（Vercel Blob redeemed/{hash} 记账，先占位后授予）；
-//   3. 同一用户重复提交同一码 = 幂等成功（不重复叠加）；
+//   3. 同一用户重复提交同一码 = 幂等成功（不重复叠加时长）；
 //   4. 输入归一化：去空格、转大写、无连字符的 16 位裸码自动补格式。
 //
-// 响应：200 { plan, billingCycle: "lifetime", proUntil, ... } 激活成功（含幂等）
+// 响应：200 { plan, billingCycle: "yearly", proUntil, ... } 激活成功（含幂等）
 //       400 格式错误 / 401 未登录 / 404 兑换码无效 / 409 已被其他账号使用
 
 import { NextRequest, NextResponse } from "next/server";
@@ -95,13 +95,12 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // 已是终身 Pro 且同一码重复提交 → 幂等成功
+  // 该码已被本用户兑换过 → 幂等成功，不重复叠加时长
   const rec = (await readMembership(userId)) ?? defaultRecord();
-  const alreadyLifetime = rec.plan === "pro" && rec.billingCycle === "lifetime";
-
-  if (!alreadyLifetime) {
-    const updated = grantPro(rec, "lifetime");
-    await writeMembership(userId, updated);
+  let final = rec;
+  if (!existing) {
+    final = grantPro(rec, "yearly");
+    await writeMembership(userId, final);
   }
 
   // 占位记账（同码同用户重复提交不产生副作用）
@@ -113,13 +112,10 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const final = alreadyLifetime
-    ? rec
-    : await readMembership(userId);
   return NextResponse.json({
     ok: true,
     plan: final?.plan ?? "pro",
-    billingCycle: final?.billingCycle ?? "lifetime",
+    billingCycle: final?.billingCycle ?? "yearly",
     proUntil: final?.proUntil ?? null,
   });
 }
