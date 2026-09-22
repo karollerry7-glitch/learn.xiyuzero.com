@@ -12,6 +12,7 @@ import { NextRequest, NextResponse } from "next/server";
 import crypto from "node:crypto";
 import { put } from "@vercel/blob";
 import { signToken } from "@/lib/auth";
+import { readUserProfile, DEFAULT_NICKNAME } from "@/lib/profile";
 
 const TOKEN_TTL_SECONDS = 7 * 24 * 60 * 60; // 7 天
 
@@ -97,14 +98,17 @@ export async function POST(req: NextRequest) {
     ...(devMode ? { dev: true } : {}),
   };
 
+  // 已设置过昵称的用户返回保存的昵称（登录页跳过昵称引导）
+  const profile = await readUserProfile(userId);
+
   return NextResponse.json({
     token: signToken(payload),
     expiresIn: TOKEN_TTL_SECONDS,
     user: {
       id: userId,
-      nickname: "西语学员",
+      nickname: profile?.nickname ?? DEFAULT_NICKNAME,
       avatar: null,
-      isNew: true,
+      isNew: !profile,
     },
   });
 }
