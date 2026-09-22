@@ -23,17 +23,21 @@ export interface MembershipRecord {
 }
 
 // ---- 与小程序 config/membership.ts 保持同步的常量 ----
-export const FREE_DAILY_NEW_WORD_LIMIT = 5;
+export const FREE_DAILY_NEW_WORD_LIMIT = 10;
 export const FREE_LEVELS: readonly string[] = ["Starter", "A1"];
 export const TOTAL_UNITS = 4505;
 
 // ---- Pro 定价（分；服务端唯一真源，客户端只用于展示） ----
-export const PRO_MONTHLY_PRICE_CENTS = 1990; // ¥19.9
-export const PRO_YEARLY_PRICE_CENTS = 12800; // ¥128
+// 第一版售卖方式：单一终身价，通过客服微信收款后发兑换码激活（/api/redeem）。
+export const PRO_LIFETIME_PRICE_CENTS = 9990; // ¥99.9 终身
+export const PRO_MONTHLY_PRICE_CENTS = 1990; // ¥19.9（历史配置保留）
+export const PRO_YEARLY_PRICE_CENTS = 12800; // ¥128（历史配置保留）
 
-/** 可售周期价格（分）；lifetime 暂不售卖（返回 null） */
+/** 可售周期价格（分）；第一版仅 lifetime 在售 */
 export function priceOfCycle(cycle: BillingCycle): number | null {
   switch (cycle) {
+    case "lifetime":
+      return PRO_LIFETIME_PRICE_CENTS;
     case "monthly":
       return PRO_MONTHLY_PRICE_CENTS;
     case "yearly":

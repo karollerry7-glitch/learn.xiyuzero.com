@@ -1,0 +1,17 @@
+// Pro 兑换码哈希表（SHA-256，服务端唯一真源）
+// 明文兑换码由运营保存（不进代码库）；每码可激活 1 个账号，授予终身 Pro。
+// 生成：2026-09-22，共 10 枚。验证逻辑见 app/api/redeem/route.ts。
+
+/** 合法兑换码的 SHA-256 哈希（十六进制小写） */
+export const REDEEM_KEY_HASHES: readonly string[] = [
+  "195ff2eae7ec9a10bb91c7ef3fe3e00a27976c1d638337800e2611b2b3ca954a",
+  "1a43009e84d73410e739cb92946b9fdebc07104008a1bcb4dfe5644d73b4fc64",
+  "226d0e634dc94bc3794b2e217260d937cd49ee48095326ab19a9115a73b00e1c",
+  "3729829138a4ebceb3536f7480d39ac35c4945e42ab5310b5b0eb394f7759fe4",
+  "4c118eb0db2f11aa82b27d5fdc864aa5b3dda311cb19ccae9fb988593f27ff02",
+  "71a817f0ffd45a51c4a7fe98c4c24e8bd26c8d2ea619e84f65ce2070a1fe2a21",
+  "89c0cd969819b04e81fb2ebbe03268dbd2a557e55ac95066f55b73099c2e41f3",
+  "a19f3d0d5206cde15a0fd365cc9638a03a1d2fb38444a0d8a7d704fd275b32c7",
+  "c368d5a6339b8d4f523a9dfea797303ffa3b4a633a109746553c2ed59686641a",
+  "f55f7fe245c78cb0994da636907363d6c310ef437340dae6f22fc1af9206d9a2",
+];
