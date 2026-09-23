@@ -26,7 +26,7 @@ export default function Onboarding() {
         {step === 0 && (
           <div className="text-center">
             <p className="text-sm text-[#C62828] font-medium">欢迎来到</p>
-            <h1 className="mt-2 text-4xl font-bold">西语Zero Learn</h1>
+            <h1 className="mt-2 text-4xl font-bold">沃天澜 · 西语</h1>
             <p className="mt-4 text-[#182230]/60 leading-relaxed">
               不是记住更多单词。
               <br />

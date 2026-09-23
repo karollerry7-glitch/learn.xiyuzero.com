@@ -41,8 +41,8 @@ async function readPayerOpenid(userId: string): Promise<string | null> {
 }
 
 const PLAN_NAME: Record<string, string> = {
-  monthly: "西语Zero Pro·月卡",
-  yearly: "西语Zero Pro·年卡",
+  monthly: "沃天澜 Pro·月卡",
+  yearly: "沃天澜 Pro·年卡",
 };
 
 export async function POST(req: NextRequest) {
