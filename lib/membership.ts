@@ -29,17 +29,17 @@ export const TOTAL_UNITS = 4505;
 
 // ---- Pro 定价（分；服务端唯一真源，客户端只用于展示） ----
 // 售卖方式：单一年费，通过客服微信收款后发兑换码激活（/api/redeem，授予 yearly）。
-export const PRO_YEARLY_PRICE_CENTS = 2990; // ¥29.9 / 年（当前唯一在售）
-export const PRO_MONTHLY_PRICE_CENTS = 1990; // ¥19.9（历史配置保留）
-export const PRO_LIFETIME_PRICE_CENTS = 9990; // ¥99.9（历史配置保留；旧终身数据仍在库）
+export const PRO_YEARLY_PRICE_CENTS = 2990; // ¥29.9 / 年（唯一在售方案）
 
-/** 可售周期价格（分）；当前仅 yearly 在售，lifetime 已下架 */
+/** 可售周期价格（分）；仅 yearly 在售。monthly / lifetime 均已下架：
+ *  - monthly：不再售卖，下单接口对 null 金额直接 400 拒绝
+ *  - lifetime：存量终身用户仍按 computeIsPro 永久生效（类型保留做数据兼容） */
 export function priceOfCycle(cycle: BillingCycle): number | null {
   switch (cycle) {
     case "lifetime":
-      return null; // 已下架（存量终身用户仍按 computeIsPro 永久生效）
+      return null; // 已下架
     case "monthly":
-      return PRO_MONTHLY_PRICE_CENTS;
+      return null; // 已下架（仅做单一 Pro 年费 ¥29.9 版本）
     case "yearly":
       return PRO_YEARLY_PRICE_CENTS;
     default:

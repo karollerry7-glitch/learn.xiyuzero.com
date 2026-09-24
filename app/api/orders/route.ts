@@ -41,8 +41,7 @@ async function readPayerOpenid(userId: string): Promise<string | null> {
 }
 
 const PLAN_NAME: Record<string, string> = {
-  monthly: "沃天澜 Pro·月卡",
-  yearly: "沃天澜 Pro·年卡",
+  yearly: "沃天澜 Pro·年卡", // 单一在售方案（Pro 年费 ¥29.9）
 };
 
 export async function POST(req: NextRequest) {
