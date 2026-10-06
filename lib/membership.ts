@@ -11,6 +11,7 @@
 // 权限判断（isPro / 额度）只在本文件计算，API 路由不得自行散落判断。
 
 import { get, put } from "@vercel/blob";
+import { dayKey } from "./datekey";
 
 export type Plan = "free" | "pro";
 export type BillingCycle = "monthly" | "yearly" | "lifetime";
@@ -99,7 +100,7 @@ export interface MembershipView {
 }
 
 function utcToday(): string {
-  return new Date().toISOString().slice(0, 10);
+  return dayKey();
 }
 
 export function computeIsPro(rec: MembershipRecord, now = Date.now()): boolean {
@@ -153,7 +154,7 @@ export function usageFromActivity(
   activity: Record<string, { newLearned?: number }>,
   now: Date = new Date()
 ): MembershipUsage {
-  const date = now.toISOString().slice(0, 10);
+  const date = dayKey(now);
   const today = activity[date];
   return { date, newLearnedToday: today?.newLearned ?? 0 };
 }

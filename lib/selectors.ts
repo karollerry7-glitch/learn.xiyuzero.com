@@ -3,6 +3,7 @@ import { units } from "@/data/units";
 import { AppState, LearningUnit, ReviewState } from "@/types";
 import { initialReviewState, isDue } from "./srs";
 import { todayKey } from "./store";
+import { dayKey } from "./datekey";
 
 export function getReviewOf(s: AppState, id: string): ReviewState {
   return s.reviews[id] ?? initialReviewState();
@@ -49,7 +50,7 @@ export function streakDays(s: AppState): number {
   let streak = 0;
   const d = new Date();
   for (;;) {
-    const k = d.toISOString().slice(0, 10);
+    const k = dayKey(d);
     const a = s.activity[k];
     const did =
       a && (a.newLearned > 0 || a.reviewed > 0 || a.listening > 0 || a.output > 0);
@@ -77,7 +78,7 @@ export function recentActivity(s: AppState, days: number) {
   for (let i = days - 1; i >= 0; i--) {
     const d = new Date();
     d.setDate(d.getDate() - i);
-    const k = d.toISOString().slice(0, 10);
+    const k = dayKey(d);
     const a = s.activity[k];
     out.push({
       date: k.slice(5),

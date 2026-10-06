@@ -14,6 +14,7 @@ import {
 } from "@/types";
 import { initialReviewState, recordProduction, scheduleNext } from "./srs";
 import { useSyncExternalStore } from "react";
+import { dayKey } from "./datekey";
 
 const KEY = "xiyuzero-learn-v1";
 
@@ -90,7 +91,7 @@ export function useAppState(): AppState {
 // ── Helpers ──
 
 export function todayKey(): string {
-  return new Date().toISOString().slice(0, 10);
+  return dayKey();
 }
 
 function emptyDay(): DayActivity {
