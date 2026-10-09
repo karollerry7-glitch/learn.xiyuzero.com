@@ -7,6 +7,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { conjugatePresent } from "./conjugate.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SEED_DIR = path.join(root, "data", "seeds5d");
@@ -242,8 +243,12 @@ function autoGrammar(u) {
   } else if (pos === "verbo") {
     if (u.grammarNote) push(u.grammarNote);
     else {
-      const ending = word.match(/(ar|er|ir)$/)?.[1];
-      push(ending ? `动词原形（-${ending} 类），变位后使用` : "动词，变位后使用");
+      const conj = conjugatePresent(word);
+      if (conj) push(`现在时变位：${conj}`);
+      else {
+        const ending = word.match(/(ar|er|ir)$/)?.[1];
+        push(ending ? `动词原形（-${ending} 类），变位后使用` : "动词，变位后使用");
+      }
     }
   } else if (pos === "locución verbal") {
     push("动词短语：整体当动词用，注意介词搭配");
