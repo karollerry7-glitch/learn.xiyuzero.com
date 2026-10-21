@@ -24,28 +24,15 @@ export interface MembershipRecord {
 }
 
 // ---- 与小程序 config/membership.ts 保持同步的常量 ----
-export const FREE_DAILY_NEW_WORD_LIMIT = 10;
-export const FREE_LEVELS: readonly string[] = ["Starter", "A1"];
 export const TOTAL_UNITS = 4505;
 
-// ---- Pro 定价（分；服务端唯一真源，客户端只用于展示） ----
-// 售卖方式：单一年费，通过客服微信收款后发兑换码激活（/api/redeem，授予 yearly）。
-export const PRO_YEARLY_PRICE_CENTS = 2990; // ¥29.9 / 年（唯一在售方案）
+// ---- 收费会员已移除（2026-10-22，用户指示）----
+// 全部功能对所有用户免费开放；plan/billingCycle/proUntil 字段仅为
+// 历史数据兼容保留（不删除用户记录），不再产生任何权益差异。
 
-/** 可售周期价格（分）；仅 yearly 在售。monthly / lifetime 均已下架：
- *  - monthly：不再售卖，下单接口对 null 金额直接 400 拒绝
- *  - lifetime：存量终身用户仍按 computeIsPro 永久生效（类型保留做数据兼容） */
-export function priceOfCycle(cycle: BillingCycle): number | null {
-  switch (cycle) {
-    case "lifetime":
-      return null; // 已下架
-    case "monthly":
-      return null; // 已下架（仅做单一 Pro 年费 ¥29.9 版本）
-    case "yearly":
-      return PRO_YEARLY_PRICE_CENTS;
-    default:
-      return null;
-  }
+/** 可售周期价格（分）；一切周期均已下架，购买链路关闭 */
+export function priceOfCycle(_cycle: BillingCycle): number | null {
+  return null;
 }
 
 /**
@@ -159,37 +146,29 @@ export function usageFromActivity(
   return { date, newLearnedToday: today?.newLearned ?? 0 };
 }
 
-/** 组装对外视图（Entitlement 计算 + 用量） */
+/** 组装对外视图（Entitlement 计算 + 用量）。
+ *  收费会员已移除：所有用户一律返回完整权益（原 Pro 权益）。 */
 export function membershipView(
   rec: MembershipRecord,
   activity: Record<string, { newLearned?: number }>,
   now: Date = new Date()
 ): MembershipView {
   const isPro = computeIsPro(rec, now.getTime());
+  void isPro; // 历史字段仅供展示，不再影响权益
   return {
     plan: rec.plan,
     billingCycle: rec.billingCycle,
     proUntil: rec.proUntil,
     isPro,
-    entitlements: isPro
-      ? {
-          dailyNewLimit: null,
-          levels: null,
-          fullVocabulary: true,
-          smartReview: "full",
-          stats: "full",
-          historyDays: null,
-          cloudSync: "full",
-        }
-      : {
-          dailyNewLimit: FREE_DAILY_NEW_WORD_LIMIT,
-          levels: FREE_LEVELS,
-          fullVocabulary: false,
-          smartReview: "basic",
-          stats: "basic",
-          historyDays: 7,
-          cloudSync: "basic",
-        },
+    entitlements: {
+      dailyNewLimit: null,
+      levels: null,
+      fullVocabulary: true,
+      smartReview: "full",
+      stats: "full",
+      historyDays: null,
+      cloudSync: "full",
+    },
     usage: usageFromActivity(activity, now),
   };
 }

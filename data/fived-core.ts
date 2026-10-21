@@ -377,4 +377,119 @@ export const FIVE_D_CORE: Record<string, FiveD> = {
       { spanish: "—¿Mañana a las ocho? —De acuerdo.", chinese: "——明天八点？——好的。" },
     ],
   },
-};;
+
+  // ---------- 微型交流试点 6 词（2026-10-21，配套 comm-core.ts） ----------
+  "st-124": {
+    meaning: "包裹",
+    sound: { syllables: "el pa-QUE-te", stress: "重音在 que（以元音结尾，倒数第二音节）" },
+    grammar: [
+      "定冠词 el → 阳性名词：el paquete",
+      "复数：los paquetes",
+      "寄包裹：enviar un paquete；收包裹：recibir un paquete",
+    ],
+    chunks: [
+      { spanish: "enviar un paquete", chinese: "寄包裹" },
+      { spanish: "recoger el paquete", chinese: "取包裹" },
+      { spanish: "mañana por la mañana", chinese: "明天上午" },
+    ],
+    sentences: [
+      { spanish: "¿Puede traer el paquete mañana por la mañana?", chinese: "您能明天上午把包裹送来吗？" },
+      { spanish: "Voy a enviar un paquete a mi madre.", chinese: "我要给我妈寄一个包裹。" },
+    ],
+  },
+
+  "st-125": {
+    meaning: "地址",
+    sound: { syllables: "la di-rec-CIÓN", stress: "重音在 ción（-ción 结尾重读最后一个音节）" },
+    grammar: [
+      "定冠词 la → 阴性名词：la dirección",
+      "问寄到哪个地址：¿A qué dirección (lo envío)?",
+      "邮箱地址：el correo (electrónico)",
+    ],
+    chunks: [
+      { spanish: "¿a qué dirección?", chinese: "寄到哪个地址？" },
+      { spanish: "la dirección de envío", chinese: "收货地址" },
+      { spanish: "dar la dirección", chinese: "告知地址" },
+    ],
+    sentences: [
+      { spanish: "¿A qué dirección envío el paquete?", chinese: "包裹寄到哪个地址？" },
+      { spanish: "Vivo en la calle Gran Vía, número 45.", chinese: "我住在 Gran Vía 大街 45 号。" },
+    ],
+  },
+
+  "st-126": {
+    meaning: "约见面；约时间",
+    sound: { syllables: "que-DAR", stress: "重音在 -dar（-ar 动词原形重读词尾）" },
+    grammar: [
+      "规则 -ar 动词：yo quedo, tú quedas, él queda",
+      "约见面最常用第一人称复数：¿Quedamos el lunes?（我们约周一见，好吗？）",
+      "和某人约见面：quedar con alguien",
+    ],
+    chunks: [
+      { spanish: "¿quedamos el lunes?", chinese: "我们约周一见？" },
+      { spanish: "quedar con alguien", chinese: "和某人约见面" },
+      { spanish: "quedar a las cinco", chinese: "约在五点" },
+    ],
+    sentences: [
+      { spanish: "¿Quedamos el miércoles en la biblioteca?", chinese: "我们约周三在图书馆见，好吗？" },
+      { spanish: "Lo siento, el viernes no puedo.", chinese: "不好意思，周五我不行。" },
+    ],
+  },
+
+  "st-127": {
+    meaning: "几点（钟）？",
+    sound: { syllables: "a qué HO-ra", stress: "重音在 qué（疑问词自然重读）" },
+    grammar: [
+      "问具体钟点：¿A qué hora + 动词？",
+      "回答：a las + 数字（a las diez = 10 点）",
+      "问「现在几点」是 ¿Qué hora es?——两者不要混",
+    ],
+    chunks: [
+      { spanish: "¿a qué hora abre?", chinese: "几点开门？" },
+      { spanish: "¿a qué hora llega?", chinese: "几点到？" },
+      { spanish: "¿a qué hora empezamos?", chinese: "我们几点开始？" },
+    ],
+    sentences: [
+      { spanish: "¿A qué hora abre el museo?", chinese: "博物馆几点开门？" },
+      { spanish: "El tren llega a las ocho.", chinese: "火车 8 点到。" },
+    ],
+  },
+
+  "st-128": {
+    meaning: "更便宜",
+    sound: { syllables: "más ba-RA-to", stress: "重音在 ra（baRAto，倒数第二音节）" },
+    grammar: [
+      "más + 形容词 = 更……（比较级不需要变词尾）",
+      "barato 随名词变性：el modelo barato / la opción barata",
+      "更贵是 más caro",
+    ],
+    chunks: [
+      { spanish: "¿hay algo más barato?", chinese: "有更便宜的吗？" },
+      { spanish: "un poco más barato", chinese: "再便宜一点" },
+      { spanish: "más económico", chinese: "更实惠" },
+    ],
+    sentences: [
+      { spanish: "¿Tiene uno más barato?", chinese: "有更便宜一点的吗？" },
+      { spanish: "Este modelo es más económico.", chinese: "这款更实惠。" },
+    ],
+  },
+
+  "st-129": {
+    meaning: "更慢一点",
+    sound: { syllables: "más des-PA-cio", stress: "重音在 pa（desPAcio，倒数第二音节）" },
+    grammar: [
+      "despacio 是副词，修饰动词，不变阴阳性",
+      "hablar despacio = 慢慢说；más despacio = 再慢一点",
+      "同义：más lento（更慢）",
+    ],
+    chunks: [
+      { spanish: "hablar más despacio", chinese: "说慢一点" },
+      { spanish: "¿puede repetir más despacio?", chinese: "您能慢一点再说一遍吗？" },
+      { spanish: "más despacio, por favor", chinese: "请慢一点" },
+    ],
+    sentences: [
+      { spanish: "¿Puede hablar más despacio, por favor?", chinese: "您能说慢一点吗？" },
+      { spanish: "Todavía es muy rápido para mí.", chinese: "对我来说还是太快了。" },
+    ],
+  },
+};

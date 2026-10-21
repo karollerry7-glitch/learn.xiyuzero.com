@@ -22,6 +22,56 @@ export interface FiveD {
   sentences: FiveDItem[]; // D5：真实高频例句（1-3 个，符合等级）
 }
 
+// ============ 微型交流任务（Context 维度的交流闭环） ============
+// 与客户端 xiyuzero-miniprogram/src/shared/types.ts 的 CommTask 镜像，修改时两端同步。
+// 判分规则为教师式标注（规则式 MVP，未接入 AI）。
+// 正则 pattern 应按「重音不敏感的小写文本」书写（客户端 grade.ts loose() 规范化）。
+
+export interface CommTask {
+  /** 「我能……」交流目标（中文） */
+  goal: string;
+  /** 情境说明（中文；不含西语参考答案，防止照抄） */
+  scenario: string;
+  /** 交流要求（中文） */
+  task: string;
+  /** 判分规则 */
+  check: {
+    /** 必须全部命中的关键语义 */
+    key: { label: string; any: string[] }[];
+    /** 命中任一 → 关键错误（数量/时间/否定），一票否决 */
+    rejects?: { message: string; any: string[] }[];
+    /** 目标表达：未用不判交流失败，但不记目标词产出证据 */
+    target?: { label: string; any: string[] };
+  };
+  /** 参考表达（提交后展示；不是唯一合法答案） */
+  reference: string[];
+  /** 追问（对方输入西语；考察理解与临场回应） */
+  followUp?: {
+    prompt: string;
+    promptZh: string;
+    task: string;
+    check: {
+      key: { label: string; any: string[] }[];
+      rejects?: { message: string; any: string[] }[];
+      target?: { label: string; any: string[] };
+    };
+    reference: string[];
+  };
+  /** 迁移任务（改变角色/目的/信息；复习期出现，检验真正可用性） */
+  transfer?: {
+    scenario: string;
+    task: string;
+    check: {
+      key: { label: string; any: string[] }[];
+      rejects?: { message: string; any: string[] }[];
+      target?: { label: string; any: string[] };
+    };
+    reference: string[];
+  };
+  /** 常见错误提示（中文） */
+  commonErrors?: string[];
+}
+
 export type UnitType =
   | "word"
   | "phrase"

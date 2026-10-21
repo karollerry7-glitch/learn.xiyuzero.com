@@ -86,8 +86,9 @@ test("JSAPI paySign 原文与签名验证", () => {
 });
 
 test("定价：服务端唯一真源（分）", () => {
-  assert.equal(priceOfCycle("monthly"), null); // 月卡已下架（仅做单一 Pro 年费 ¥29.9）
-  assert.equal(priceOfCycle("yearly"), 2990); // ¥29.9/年（唯一在售）
+  // 2026-10-22 收费会员移除：所有周期均已下架，购买链路关闭
+  assert.equal(priceOfCycle("monthly"), null); // 已下架
+  assert.equal(priceOfCycle("yearly"), null); // 已下架（原 ¥29.9/年）
   assert.equal(priceOfCycle("lifetime"), null); // 已下架
 });
 

@@ -9,6 +9,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { units } from "@/data/units";
 import { FIVE_D } from "@/data/fived";
+import { COMM_CORE } from "@/data/comm-core";
 import type { Level } from "@/types";
 
 export const runtime = "nodejs";
@@ -56,9 +57,13 @@ export async function GET(req: NextRequest) {
       const u = byId.get(id);
       if (u) items.push(u);
     }
-    // 合并 5D 卡数据（fived.ts 独立维护，按 id 关联）
+    // 合并 5D 卡数据 + 微型交流任务（fived.ts / comm-core.ts 独立维护，按 id 关联）
     return NextResponse.json(
-      items.map((u) => ({ ...u, fiveD: FIVE_D[u.id] ?? undefined }))
+      items.map((u) => ({
+        ...u,
+        fiveD: FIVE_D[u.id] ?? undefined,
+        comm: COMM_CORE[u.id] ?? undefined,
+      }))
     );
   }
 

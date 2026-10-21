@@ -67,7 +67,8 @@ async function api(path, { method = "GET", token, body } = {}) {
   });
 }
 
-const todayUTC = new Date().toISOString().slice(0, 10);
+// 东八区自然日（与 lib/datekey.ts dayKey 一致）：UTC 键在凌晨 0~8 点会与服务端错位
+const todayUTC = new Date(Date.now() + 8 * 3600 * 1000).toISOString().slice(0, 10);
 
 test("服务端 API 集成（全链路）", { timeout: 180000 }, async (t) => {
   await waitReady();
@@ -84,8 +85,9 @@ test("服务端 API 集成（全链路）", { timeout: 180000 }, async (t) => {
     const v = await r.json();
     assert.equal(v.plan, "free");
     assert.equal(v.isPro, false);
-    assert.equal(v.entitlements.dailyNewLimit, 5);
-    assert.deepEqual(v.entitlements.levels, ["Starter", "A1"]);
+    // 2026-10-22 收费会员移除：所有用户一律完整权益（不限额度、全部等级）
+    assert.equal(v.entitlements.dailyNewLimit, null);
+    assert.equal(v.entitlements.levels, null);
     assert.equal(v.usage.newLearnedToday, 0);
     assert.equal(v.usage.date, todayUTC);
   });
@@ -185,8 +187,9 @@ test("服务端 API 集成（全链路）", { timeout: 180000 }, async (t) => {
     });
     const v = await (await api("/api/membership", { token: tokA })).json();
     assert.equal(v.plan, "pro"); // 记录还是 pro
-    assert.equal(v.isPro, false); // 但已过期降级
-    assert.equal(v.entitlements.dailyNewLimit, 5);
+    assert.equal(v.isPro, false); // 历史记录字段：已过期
+    // 收费会员已移除：权益不随 plan 变化，过期用户仍为完整权益
+    assert.equal(v.entitlements.dailyNewLimit, null);
   });
 
   await t.test("orders 占位：登录后购买 → 501 PAYMENT_NOT_AVAILABLE", async () => {
@@ -218,7 +221,7 @@ test("服务端 API 集成（全链路）", { timeout: 180000 }, async (t) => {
     assert.equal((await api("/api/units?ids=" + "a1-001,".repeat(60))).status, 400);
     const ok = await api("/api/units?level=A1&page=1&pageSize=10");
     assert.equal(ok.status, 200);
-    assert.equal((await ok.json()).total, 458);
+    assert.equal((await ok.json()).total, 464); // 458 + 6 个交流试点新词（st-124~129）
   });
 
   await t.test("dev-plan 安全门：无 MEMBERSHIP_DEV_MOCK 的请求被拒绝（代码审查 + 本地已置 1 验证路径）", async () => {

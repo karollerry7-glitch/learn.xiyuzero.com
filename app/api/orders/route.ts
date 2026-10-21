@@ -69,8 +69,8 @@ export async function POST(req: NextRequest) {
   const amountCents = priceOfCycle(cycle);
   if (amountCents === null) {
     return NextResponse.json(
-      { error: "不支持的计费周期（lifetime 暂不售卖）" },
-      { status: 400 }
+      { error: "会员收费已下线，全部功能已免费开放", code: "SALES_DISCONTINUED" },
+      { status: 410 }
     );
   }
 
